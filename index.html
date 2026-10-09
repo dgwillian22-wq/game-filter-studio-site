@@ -124,6 +124,7 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 .cmp .alca i{position:relative;width:46px;height:46px;border-radius:50%;background:var(--v);color:#000;font:900 18px Inter,sans-serif;display:flex;align-items:center;justify-content:center;font-style:normal;box-shadow:0 0 30px var(--glow)}
 .cmp .et{position:absolute;top:14px;z-index:2;background:rgba(0,0,0,.65);color:#fff;border-radius:6px;padding:6px 10px;font:800 12px Inter,sans-serif;letter-spacing:.08em}.cmp .et.a{left:14px}.cmp .et.d{right:14px;background:var(--v);color:#000}
 .cmp-bar{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.qual{display:inline-flex;gap:6px}.som.q.on{background:var(--v);color:#000;border-color:var(--v)}.som.q[disabled]{opacity:.45;cursor:not-allowed}
 </style>
 </head>
 <body>
@@ -209,7 +210,7 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
     <span class="et a">ORIGINAL</span><span class="et d">COM WLSS</span>
     <div class="alca" role="slider" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><i>↔</i></div>
   </div>
-  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button></div>
+  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button><span class="qual" role="group" aria-label="Qualidade do vídeo"><button class="som q on" id="cmpHD" type="button" data-q="hd">HD</button><button class="som q" id="cmp4K" type="button" data-q="4k" disabled title="O clipe em 4K está sendo preparado">4K (em breve)</button></span></div>
   <p class="dica">Gameplay de Mortal Kombat 1 (canal MKIceAndFire, YouTube), usado só para demonstrar o filtro.</p>
   <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o cell shading no meu jogo</a></div>
 </div></section>
@@ -405,6 +406,8 @@ function primeiro(e){if(!mudo)return;if(e.target&&e.target.closest&&e.target.clo
 ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,primeiro,{once:true,passive:true})})}
 document.querySelectorAll('.yt[data-id]').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&start='+(b.dataset.start||0);f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.dataset.titulo||'Video';b.textContent='';b.appendChild(f);b.classList.add('on')})})})();
 (function(){var ba=document.getElementById('cmp');if(!ba)return;var va=ba.querySelector('.ant'),vd=ba.querySelector('.dep'),al=ba.querySelector('.alca'),pb=document.getElementById('cmpPlay'),sb=document.getElementById('cmpSom'),pos=50,arr=false,vis=false;
+var grande=(window.innerWidth*(window.devicePixelRatio||1)>=2200)&&!(navigator.connection&&navigator.connection.saveData);
+if(grande&&va.dataset.hd&&vd.dataset.hd){va.dataset.sd=va.getAttribute('src');vd.dataset.sd=vd.getAttribute('src');va.src=va.dataset.hd;vd.src=vd.dataset.hd}
 function ajusta(p){pos=Math.max(2,Math.min(98,p));vd.style.clipPath='inset(0 0 0 '+pos+'%)';al.style.left=pos+'%'}
 function px(e){var r=ba.getBoundingClientRect();return((e.touches?e.touches[0].clientX:e.clientX)-r.left)/r.width*100}
 function ini(e){arr=true;ajusta(px(e));e.preventDefault()}
@@ -419,6 +422,15 @@ if(sb)sb.addEventListener('click',function(){va.muted=!va.muted;sb.textContent=v
 setInterval(function(){if(!va.paused&&Math.abs(va.currentTime-vd.currentTime)>0.12)vd.currentTime=va.currentTime},400);
 va.addEventListener('ended',function(){vd.currentTime=0;va.currentTime=0;toca()});
 if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(en){vis=en.isIntersecting;if(vis){if(va.paused&&!ba.dataset.manual)toca()}else if(!va.paused){pausa()}})},{threshold:.35}).observe(ba)}
+
+var qb=document.querySelectorAll('.cmp-bar .q');
+function srcs(q){return q==='4k'&&va.dataset.hd&&vd.dataset.hd?[va.dataset.hd,vd.dataset.hd]:[va.dataset.sd,vd.dataset.sd]}
+function setQ(q){var w=!va.paused,t=va.currentTime,sv=srcs(q);if(!sv[0])return;
+ [[va,sv[0]],[vd,sv[1]]].forEach(function(x){var v=x[0];if(v.getAttribute('src')===x[1])return;v.addEventListener('loadedmetadata',function f(){v.removeEventListener('loadedmetadata',f);try{v.currentTime=t}catch(e){}if(w)v.play().catch(function(){})});v.src=x[1];v.load()});
+ qb.forEach(function(b){b.classList.toggle('on',b.dataset.q===q)})}
+if(!va.dataset.sd)va.dataset.sd=va.getAttribute('src');if(!vd.dataset.sd)vd.dataset.sd=vd.getAttribute('src');
+qb.forEach(function(b){b.addEventListener('click',function(){if(b.disabled)return;setQ(b.dataset.q)})});
+if(grande&&va.dataset.hd&&vd.dataset.hd){qb.forEach(function(b){b.classList.toggle('on',b.dataset.q==='4k')})}
 if(pb)pb.addEventListener('click',function(){ba.dataset.manual='1'});
 })();
 </script>
