@@ -125,13 +125,28 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 .cmp .et{position:absolute;top:14px;z-index:2;background:rgba(0,0,0,.65);color:#fff;border-radius:6px;padding:6px 10px;font:800 12px Inter,sans-serif;letter-spacing:.08em}.cmp .et.a{left:14px}.cmp .et.d{right:14px;background:var(--v);color:#000}
 .cmp-bar{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
 .qual{display:inline-flex;gap:6px}.som.q.on{background:var(--v);color:#000;border-color:var(--v)}.som.q[disabled]{opacity:.45;cursor:not-allowed}
+.cmp .ytq{position:absolute;inset:0;z-index:1;background:#000}.cmp .ytq iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}.cmp .ytq[hidden]{display:none}.cmp .dep{z-index:2}.cmp .et,.cmp .alca{z-index:3}
+.arte{max-width:1000px;margin:30px auto 0;border-radius:18px;overflow:hidden;border:1px solid rgba(57,255,20,.3);box-shadow:0 0 70px rgba(57,255,20,.12)}.arte img{display:block;width:100%;height:auto}.arte figcaption{padding:8px 0 10px;margin:0}
+.live{max-width:1000px;margin:30px auto 0}
+.live-tela{position:relative;aspect-ratio:16/9;background:#000;border-radius:18px;overflow:hidden;border:1px solid rgba(57,255,20,.32);box-shadow:0 0 80px rgba(57,255,20,.14)}
+.live-tela canvas{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain}
+.live-vazio{position:absolute;inset:0;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;text-align:center;color:#fff;background:radial-gradient(circle at 50% 40%,rgba(57,255,20,.12),transparent 60%);padding:20px}
+.live-vazio b{font:800 20px Outfit,Inter,sans-serif}.live-vazio span{color:var(--dim);font-size:14px}
+.live-tela.on .live-vazio{display:none}.live-tela .et{position:absolute;top:14px;z-index:2;background:rgba(0,0,0,.65);color:#fff;border-radius:6px;padding:6px 10px;font:800 12px Inter,sans-serif;letter-spacing:.08em;display:none}.live-tela.on .et{display:block}.live-tela .et.a{left:14px}.live-tela .et.d{right:14px;background:var(--v);color:#000}
+.live-ctrl{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:16px;align-items:center}.live-btn{cursor:pointer}
+.live-ctrl .som[disabled]{opacity:.45;cursor:not-allowed}
+.live-sl{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+.live-sl label{display:flex;flex-direction:column;gap:6px;font:700 13px Inter,sans-serif;color:var(--dim)}
+.live-sl input[type=range]{width:100%;accent-color:var(--v)}
+.live-tela:fullscreen{border-radius:0;border:0}
+header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#video"],header nav a[href="#recursos"]{display:none}}
 </style>
 </head>
 <body>
 <div class="aviso">TESTE GRÁTIS — baixe e use agora, todos os efeitos liberados · <a data-download href="baixar.html">Baixar o teste</a></div>
 <header><div class="wrap hd">
   <a href="#topo" class="logo" aria-label="WLSS"><img src="img/logo.webp" alt="WLSS" width="115" height="52"></a>
-  <nav><a href="#demo">Em ação</a><a href="#anime">Anime</a><a href="#celshading">Cell shading</a><a href="#laplaciano">Laplaciano</a><a href="#recursos">Recursos</a><a href="#video">Exportar vídeo</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a></nav>
+  <nav><a href="#demo">Em ação</a><a href="#anime">Anime</a><a href="#celshading">Cell shading</a><a href="#aovivo">Ao vivo</a><a href="#laplaciano">Laplaciano</a><a href="#recursos">Recursos</a><a href="#video">Exportar vídeo</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a></nav>
   <a class="btn btn-v btn-sm" data-compra href="#oferta">Comprar agora</a>
 </div></header>
 
@@ -157,14 +172,6 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
     <div class="st"><b>0</b><span>mods necessários</span></div>
     <a class="btn btn-v" data-compra href="#oferta">Quero o WLSS</a>
   </div>
-  <div class="rv" style="max-width:820px;margin:44px auto 0"><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/witcher-por-do-sol.webp" alt="Cena original x WLSS: modo Pôr do sol — com WLSS" decoding="async">
-  <img class="ba-before" src="img/witcher-antes.webp" alt="Cena original x WLSS: modo Pôr do sol — original" decoding="async">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Cena original x WLSS: modo Pôr do sol</figcaption>
-</figure><p class="dica">↔ Arraste a linha para comparar o original com o WLSS</p></div>
 </div>
 <div class="ticker" aria-hidden="true"><div><span>CYBERPUNK •</span><span>SYNTHWAVE •</span><span>TEAL & ORANGE •</span><span>OUTONO •</span><span>INVERNO •</span><span>NOITE ESTRELADA •</span><span>CHUVA •</span><span>AURA DE FOGO •</span><span>MÁRMORE •</span><span>CROMO LÍQUIDO •</span><span>SKETCH •</span><span>POP ART •</span><span>CARTOON 3D •</span><span>LAPLACIANO •</span><span>ANIME RESTAURADO •</span><span>HQ •</span><span>PELE LIMPA •</span><span>FUNDO CHROMA •</span><span>DESINTEGRAÇÃO •</span><span>SCANNER •</span><span>ESPELHO D'ÁGUA •</span><span>VISÃO TÉRMICA •</span><span>CYBERPUNK •</span><span>SYNTHWAVE •</span><span>TEAL & ORANGE •</span><span>OUTONO •</span><span>INVERNO •</span><span>NOITE ESTRELADA •</span><span>CHUVA •</span><span>AURA DE FOGO •</span><span>MÁRMORE •</span><span>CROMO LÍQUIDO •</span><span>SKETCH •</span><span>POP ART •</span><span>CARTOON 3D •</span><span>LAPLACIANO •</span><span>ANIME RESTAURADO •</span><span>HQ •</span><span>PELE LIMPA •</span><span>FUNDO CHROMA •</span><span>DESINTEGRAÇÃO •</span><span>SCANNER •</span><span>ESPELHO D'ÁGUA •</span><span>VISÃO TÉRMICA •</span></div></div>
 </section>
@@ -206,13 +213,52 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
   <p class="sub rv">O preset <b>LAP 1</b> aplicado por cima de um gameplay, sem editar o vídeo. Arraste a linha para comparar o original com o WLSS.</p>
   <div class="cmp rv" id="cmp">
     <video class="ant" src="media/antes.mp4" poster="media/poster.jpg" muted playsinline loop preload="metadata"></video>
+    <div class="ytq" id="ytq" hidden></div>
     <video class="dep" src="media/depois.mp4" muted playsinline loop preload="metadata"></video>
     <span class="et a">ORIGINAL</span><span class="et d">COM WLSS</span>
     <div class="alca" role="slider" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><i>↔</i></div>
   </div>
-  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button><span class="qual" role="group" aria-label="Qualidade do vídeo"><button class="som q on" id="cmpHD" type="button" data-q="hd">HD</button><button class="som q" id="cmp4K" type="button" data-q="4k" disabled title="O clipe em 4K está sendo preparado">4K (em breve)</button></span></div>
+  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button><span class="qual" role="group" aria-label="Qualidade do vídeo"><button class="som q on" id="cmpHD" type="button" data-q="hd">HD</button><button class="som q" id="cmp4K" type="button" data-q="4k">4K</button></span><a class="som" href="https://www.youtube.com/watch?v=aEGtzGTWA0o&amp;t=600s" target="_blank" rel="noopener">Abrir em 4K no YouTube ↗</a></div>
+  <p class="dica" id="cmpInfo">Reprodução local em HD · no 4K o YouTube escolhe a qualidade pelo tamanho da sua tela</p>
   <p class="dica">Gameplay de Mortal Kombat 1 (canal MKIceAndFire, YouTube), usado só para demonstrar o filtro.</p>
   <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o cell shading no meu jogo</a></div>
+</div></section>
+
+<section id="arte"><div class="wrap">
+  <h2 class="rv">A <span class="v">diferença</span> na tela</h2>
+  <p class="sub rv">O WLSS por cima do jogo, com o painel aberto: ajuste ao vivo e veja o resultado na hora.</p>
+  <figure class="rv arte"><img src="img/wlss-antes-depois-lara.webp" alt="WLSS: antes e depois em um jogo, com o painel de controle aberto" width="1376" height="768" loading="lazy"></figure>
+  <figure class="rv arte"><img src="img/wlss-arte-ferramenta.webp" alt="WLSS: a ferramenta para revolucionar seus gráficos (arte ilustrativa de divulgação)" width="1400" height="788" loading="lazy"><figcaption class="dica">Arte ilustrativa de divulgação.</figcaption></figure>
+  <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o WLSS</a></div>
+</div></section>
+
+<section id="aovivo"><div class="wrap">
+  <h2 class="rv">Teste o efeito <span class="v">ao vivo</span> no seu vídeo</h2>
+  <p class="sub rv">Abra qualquer vídeo de jogo do seu computador (inteiro, até 4K) e veja o cell shading em tempo real, pela sua placa de vídeo. O vídeo não sai do seu navegador.</p>
+  <div class="live rv" id="live">
+    <div class="live-tela" id="liveTela">
+      <canvas id="liveCv" width="1280" height="720"></canvas>
+      <div class="live-vazio" id="liveVazio">
+        <b>Escolha um vídeo para começar</b>
+        <span>Arraste um arquivo aqui ou use os botões abaixo</span>
+      </div>
+      <span class="et a">ANTES</span><span class="et d">COM CELL SHADING</span>
+    </div>
+    <div class="live-ctrl">
+      <label class="btn btn-v live-btn" for="liveArq">Abrir um vídeo do meu PC</label>
+      <input type="file" id="liveArq" accept="video/*" hidden>
+      <button class="som" id="liveEx" type="button">Usar o clipe de exemplo</button>
+      <button class="som" id="livePlay" type="button" disabled>⏸ Pausar</button>
+      <button class="som" id="liveFull" type="button" disabled>⛶ Tela cheia</button>
+    </div>
+    <div class="live-sl">
+      <label>Antes ↔ Depois<input type="range" id="liveSplit" min="0" max="100" value="50"></label>
+      <label>Espessura da linha<input type="range" id="liveEsp" min="0" max="100" value="35"></label>
+      <label>Força das linhas<input type="range" id="liveSens" min="0" max="100" value="55"></label>
+      <label>Cores chapadas<input type="range" id="liveCor" min="0" max="100" value="60"></label>
+    </div>
+    <p class="dica" id="liveInfo">Prévia aproximada no navegador. O WLSS de verdade usa o seu preset e roda por cima de qualquer jogo ou vídeo, em tempo real, no PC.</p>
+  </div>
 </div></section>
 
 <section id="laplaciano"><div class="wrap">
@@ -265,20 +311,6 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Paisagem em quadrinho</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/849">
-  <img class="ba-after" src="img/lap-wolv-vetor.webp" alt="Personagem em vetor — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Personagem em vetor — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Personagem em vetor</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/849">
-  <img class="ba-after" src="img/lap-wolv-pro.webp" alt="Contorno forte (Anime Pro) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Contorno forte (Anime Pro) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Contorno forte (Anime Pro)</figcaption>
 </figure></div>
   <div style="text-align:center;margin-top:36px"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>Quero o Laplaciano</a></div>
 </div></section>
@@ -365,7 +397,7 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 
 <footer><div class="wrap">
   <div class="logo"><img src="img/logo.webp" alt="WLSS" width="132" height="60" loading="lazy"></div>
-  <p style="margin-top:8px">por Willian Ludgero · versão 1.0.200 · Windows 10/11 · DirectX 11</p>
+  <p style="margin-top:8px">por Willian Ludgero · versão 1.0.201 · Windows 10/11 · DirectX 11</p>
   <p style="margin-top:8px"><a href="https://wa.me/5527997962890" target="_blank" rel="noopener">Falar no WhatsApp</a> · <a href="baixar.html">Baixar</a> · <a href="recuperar.html">Recuperar minha chave</a></p>
   <p style="margin-top:8px"><a href="termos.html">Termos de uso</a> · <a href="reembolso.html">Garantia e reembolso</a> · <a href="privacidade.html">Privacidade</a></p><p class="legal" style="margin-top:8px">Willian Luiz Ludgero Junior · 126.195.617-60 · Colatina - ES · dgwillian22@gmail.com</p>
   <p class="legal">Os nomes e imagens de jogos, filmes e animes citados pertencem aos seus donos e são usados apenas para demonstrar o resultado do filtro. Não use o WLSS em jogos online competitivos com anti-cheat.</p>
@@ -405,33 +437,101 @@ if(yf){if(sb)sb.addEventListener('click',function(){som(mudo)});if(ov)ov.addEven
 function primeiro(e){if(!mudo)return;if(e.target&&e.target.closest&&e.target.closest('#somBtn,#somOv'))return;som(true)}
 ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,primeiro,{once:true,passive:true})})}
 document.querySelectorAll('.yt[data-id]').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&start='+(b.dataset.start||0);f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.dataset.titulo||'Video';b.textContent='';b.appendChild(f);b.classList.add('on')})})})();
-(function(){var ba=document.getElementById('cmp');if(!ba)return;var va=ba.querySelector('.ant'),vd=ba.querySelector('.dep'),al=ba.querySelector('.alca'),pb=document.getElementById('cmpPlay'),sb=document.getElementById('cmpSom'),pos=50,arr=false,vis=false;
+(function(){var ba=document.getElementById('cmp');if(!ba)return;
+var va=ba.querySelector('.ant'),vd=ba.querySelector('.dep'),al=ba.querySelector('.alca'),ytq=document.getElementById('ytq'),
+ pb=document.getElementById('cmpPlay'),sb=document.getElementById('cmpSom'),info=document.getElementById('cmpInfo'),qb=document.querySelectorAll('.cmp-bar .q'),
+ YT_ID='aEGtzGTWA0o',YT_INI=600,YT_DUR=12,pos=50,arr=false,modo='hd',yt=null,ytPronto=false,manual=false,muda=true;
 var grande=(window.innerWidth*(window.devicePixelRatio||1)>=2200)&&!(navigator.connection&&navigator.connection.saveData);
-if(grande&&va.dataset.hd&&vd.dataset.hd){va.dataset.sd=va.getAttribute('src');vd.dataset.sd=vd.getAttribute('src');va.src=va.dataset.hd;vd.src=vd.dataset.hd}
-function ajusta(p){pos=Math.max(2,Math.min(98,p));vd.style.clipPath='inset(0 0 0 '+pos+'%)';al.style.left=pos+'%'}
+va.dataset.sd=va.getAttribute('src');vd.dataset.sd=vd.getAttribute('src');
+function ajusta(p){pos=Math.max(2,Math.min(98,p));vd.style.clipPath='inset(0 0 0 '+pos+'%)';al.style.left=pos+'%';al.setAttribute('aria-valuenow',Math.round(pos))}
 function px(e){var r=ba.getBoundingClientRect();return((e.touches?e.touches[0].clientX:e.clientX)-r.left)/r.width*100}
 function ini(e){arr=true;ajusta(px(e));e.preventDefault()}
 function mov(e){if(arr){ajusta(px(e));e.preventDefault()}}
 function fim(){arr=false}
 ba.addEventListener('mousedown',ini);window.addEventListener('mousemove',mov);window.addEventListener('mouseup',fim);
 ba.addEventListener('touchstart',ini,{passive:false});window.addEventListener('touchmove',mov,{passive:false});window.addEventListener('touchend',fim);
-function toca(){va.play().catch(function(){});vd.play().catch(function(){});if(pb)pb.textContent='⏸ Pausar'}
-function pausa(){va.pause();vd.pause();if(pb)pb.textContent='▶ Continuar'}
-if(pb)pb.addEventListener('click',function(){if(va.paused)toca();else pausa()});
-if(sb)sb.addEventListener('click',function(){va.muted=!va.muted;sb.textContent=va.muted?'🔊 Ativar som':'🔇 Desligar som'});
-setInterval(function(){if(!va.paused&&Math.abs(va.currentTime-vd.currentTime)>0.12)vd.currentTime=va.currentTime},400);
+function tocando(){return modo==='yt'?(ytPronto&&yt.getPlayerState&&yt.getPlayerState()===1):!va.paused}
+function toca(){if(modo==='yt'){if(ytPronto)yt.playVideo()}else{va.play().catch(function(){})}vd.play().catch(function(){});if(pb)pb.textContent='⏸ Pausar'}
+function pausa(){if(modo==='yt'){if(ytPronto)yt.pauseVideo()}else va.pause();vd.pause();if(pb)pb.textContent='▶ Continuar'}
+if(pb)pb.addEventListener('click',function(){manual=true;if(tocando())pausa();else toca()});
+if(sb)sb.addEventListener('click',function(){muda=!muda;if(modo==='yt'&&ytPronto){if(muda)yt.mute();else{yt.unMute();yt.setVolume(100)}}else va.muted=muda;sb.textContent=muda?'🔊 Ativar som':'🔇 Desligar som'});
+var NOMEQ={hd2160:'4K',hd1440:'1440p',hd1080:'1080p',hd720:'720p',large:'480p',medium:'360p',small:'240p',tiny:'144p'};
+function marca(q){qb.forEach(function(b){b.classList.toggle('on',b.dataset.q===q)})}
+function carregaYT(cb){if(window.YT&&YT.Player)return cb();var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';var prev=window.onYouTubeIframeAPIReady;window.onYouTubeIframeAPIReady=function(){if(prev)prev();cb()};document.head.appendChild(s)}
+function paraYT(){ytq.hidden=true;va.style.visibility='';if(ytPronto){try{yt.pauseVideo()}catch(e){}}}
+function setQ(q){
+ if(q==='hd'){var t=vd.currentTime,w=tocando();paraYT();modo='hd';marca('hd');var sv=[va.dataset.sd,vd.dataset.sd];[[va,sv[0]],[vd,sv[1]]].forEach(function(x){if(x[0].getAttribute('src')!==x[1]){x[0].src=x[1];x[0].load()}});
+  function volta(){try{va.currentTime=t;vd.currentTime=t}catch(e){}va.muted=muda;if(w)toca()}
+  if(va.readyState>=1)volta();else va.addEventListener('loadedmetadata',function f(){va.removeEventListener('loadedmetadata',f);volta()});
+  if(info)info.textContent='Reprodução local em HD';return}
+ if(va.dataset.hd&&vd.dataset.hd){modo='hd';marca('4k');var t2=va.currentTime,w2=tocando();[[va,va.dataset.hd],[vd,vd.dataset.hd]].forEach(function(x){x[0].src=x[1];x[0].load()});va.addEventListener('loadedmetadata',function f(){va.removeEventListener('loadedmetadata',f);try{va.currentTime=t2;vd.currentTime=t2}catch(e){}if(w2)toca()});if(info)info.textContent='4K local';return}
+ va.pause();va.style.visibility='hidden';ytq.hidden=false;modo='yt';marca('4k');if(info)info.textContent='Carregando o 4K do YouTube...';
+ carregaYT(function(){
+  if(yt){try{yt.seekTo(YT_INI+(vd.currentTime%YT_DUR),true);yt.playVideo()}catch(e){}return}
+  var d=document.createElement('div');d.id='ytqp';ytq.appendChild(d);
+  yt=new YT.Player('ytqp',{host:'https://www.youtube-nocookie.com',videoId:YT_ID,width:'100%',height:'100%',
+   playerVars:{autoplay:1,mute:1,controls:0,start:YT_INI,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,fs:0,vq:'hd2160'},
+   events:{onReady:function(e){ytPronto=true;try{e.target.setPlaybackQuality('hd2160')}catch(x){}e.target.mute();e.target.seekTo(YT_INI,true);e.target.playVideo()},
+    onStateChange:function(e){if(e.data===1){try{e.target.setPlaybackQuality('hd2160')}catch(x){}setTimeout(function(){try{var qn=yt.getPlaybackQuality();if(info)info.textContent='YouTube: '+(NOMEQ[qn]||qn)+(qn==='hd2160'?' (4K)':' - o YouTube escolhe pela sua conexão e tela')}catch(x){}},2500)}}}});
+ })}
+qb.forEach(function(b){b.addEventListener('click',function(){if(b.disabled)return;manual=true;setQ(b.dataset.q)})});
+setInterval(function(){
+ if(modo==='yt'&&ytPronto&&yt.getCurrentTime){var t=yt.getCurrentTime(),rel=t-YT_INI;
+  if(rel>=YT_DUR-0.05||rel<-0.5){yt.seekTo(YT_INI,true);rel=0}
+  var st=yt.getPlayerState();
+  if(st===1){if(vd.paused)vd.play().catch(function(){});if(Math.abs(vd.currentTime-rel)>0.2)vd.currentTime=Math.max(0,rel)}
+  else if(st===2||st===3){if(!vd.paused)vd.pause()}
+ }else if(modo==='hd'&&!va.paused&&Math.abs(va.currentTime-vd.currentTime)>0.12)vd.currentTime=va.currentTime},250);
+setInterval(function(){if(modo==='yt'&&ytPronto&&info&&yt.getPlaybackQuality&&yt.getPlayerState()===1){try{var qn=yt.getPlaybackQuality();if(qn&&qn!=='unknown')info.textContent='YouTube: '+(NOMEQ[qn]||qn)+(qn==='hd2160'?' (4K)':' - o YouTube escolhe pela sua conexão e tela')}catch(e){}if(yt.getPlaybackQuality()!=='hd2160'){try{yt.setPlaybackQuality('hd2160')}catch(e){}}}},2000);
 va.addEventListener('ended',function(){vd.currentTime=0;va.currentTime=0;toca()});
-if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(en){vis=en.isIntersecting;if(vis){if(va.paused&&!ba.dataset.manual)toca()}else if(!va.paused){pausa()}})},{threshold:.35}).observe(ba)}
-
-var qb=document.querySelectorAll('.cmp-bar .q');
-function srcs(q){return q==='4k'&&va.dataset.hd&&vd.dataset.hd?[va.dataset.hd,vd.dataset.hd]:[va.dataset.sd,vd.dataset.sd]}
-function setQ(q){var w=!va.paused,t=va.currentTime,sv=srcs(q);if(!sv[0])return;
- [[va,sv[0]],[vd,sv[1]]].forEach(function(x){var v=x[0];if(v.getAttribute('src')===x[1])return;v.addEventListener('loadedmetadata',function f(){v.removeEventListener('loadedmetadata',f);try{v.currentTime=t}catch(e){}if(w)v.play().catch(function(){})});v.src=x[1];v.load()});
- qb.forEach(function(b){b.classList.toggle('on',b.dataset.q===q)})}
-if(!va.dataset.sd)va.dataset.sd=va.getAttribute('src');if(!vd.dataset.sd)vd.dataset.sd=vd.getAttribute('src');
-qb.forEach(function(b){b.addEventListener('click',function(){if(b.disabled)return;setQ(b.dataset.q)})});
-if(grande&&va.dataset.hd&&vd.dataset.hd){qb.forEach(function(b){b.classList.toggle('on',b.dataset.q==='4k')})}
-if(pb)pb.addEventListener('click',function(){ba.dataset.manual='1'});
+var jaIniciou=false;
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(en){
+  if(en.isIntersecting){if(!jaIniciou){jaIniciou=true;if(grande)setQ('4k')}if(!manual&&!tocando())toca()}
+  else if(tocando()){pausa()}})},{threshold:.35}).observe(ba)}
+})();
+(function(){var cv=document.getElementById('liveCv');if(!cv)return;
+var tela=document.getElementById('liveTela'),arq=document.getElementById('liveArq'),bEx=document.getElementById('liveEx'),bPl=document.getElementById('livePlay'),bFu=document.getElementById('liveFull'),
+ sSp=document.getElementById('liveSplit'),sEs=document.getElementById('liveEsp'),sSe=document.getElementById('liveSens'),sCo=document.getElementById('liveCor'),info=document.getElementById('liveInfo');
+var gl=cv.getContext('webgl',{antialias:false,preserveDrawingBuffer:false});
+if(!gl){info.textContent='Seu navegador não suporta WebGL, então o teste ao vivo não está disponível. Baixe o WLSS para ver o efeito de verdade.';[bEx,arq].forEach(function(x){x.disabled=true});return}
+var vs='attribute vec2 p;varying vec2 uv;void main(){uv=vec2(p.x*0.5+0.5,0.5-p.y*0.5);gl_Position=vec4(p,0.0,1.0);}';
+var fs='precision highp float;varying vec2 uv;uniform sampler2D t;uniform vec2 res;uniform float esp,sens,cor,split;'
++'float L(vec3 c){return dot(c,vec3(0.299,0.587,0.114));}'
++'vec3 S(vec2 u){return texture2D(t,u).rgb;}'
++'void main(){vec3 c0=S(uv);if(uv.x<split){gl_FragColor=vec4(c0,1.0);return;}'
++'vec2 px=1.0/res;float rs=res.y/1080.0;float r=(0.8+esp*3.2)*max(rs,0.5);float l0=L(c0);'
++'float ring=L(S(uv+vec2(r,0.0)*px))+L(S(uv+vec2(-r,0.0)*px))+L(S(uv+vec2(0.0,r)*px))+L(S(uv+vec2(0.0,-r)*px))'
++'+L(S(uv+vec2(r,r)*0.7071*px))+L(S(uv+vec2(-r,r)*0.7071*px))+L(S(uv+vec2(r,-r)*0.7071*px))+L(S(uv+vec2(-r,-r)*0.7071*px));ring*=0.125;'
++'float v=clamp((ring-l0)*(5.0+sens*30.0),0.0,1.0);v=smoothstep(0.10,0.55,v);'
++'float n=mix(24.0,4.0,cor);vec3 q=floor(c0*n+0.5)/n;vec3 col=mix(c0,q,cor);float g=L(col);col=mix(vec3(g),col,1.0+0.25*cor);'
++'col=mix(col,vec3(0.02,0.02,0.04),v);'
++'float d=abs(uv.x-split)*res.x;if(split>0.0&&split<1.0&&d<1.5*max(rs,1.0))col=vec3(0.22,1.0,0.08);'
++'gl_FragColor=vec4(col,1.0);}';
+function sh(t,src){var o=gl.createShader(t);gl.shaderSource(o,src);gl.compileShader(o);if(!gl.getShaderParameter(o,gl.COMPILE_STATUS)){console.error(gl.getShaderInfoLog(o));return null}return o}
+var pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+var bf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,bf);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+var lp=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(lp);gl.vertexAttribPointer(lp,2,gl.FLOAT,false,0,0);
+var tx=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tx);
+[[gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE],[gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE],[gl.TEXTURE_MIN_FILTER,gl.LINEAR],[gl.TEXTURE_MAG_FILTER,gl.LINEAR]].forEach(function(a){gl.texParameteri(gl.TEXTURE_2D,a[0],a[1])});
+var U={res:gl.getUniformLocation(pr,'res'),esp:gl.getUniformLocation(pr,'esp'),sens:gl.getUniformLocation(pr,'sens'),cor:gl.getUniformLocation(pr,'cor'),split:gl.getUniformLocation(pr,'split'),t:gl.getUniformLocation(pr,'t')};
+var v=document.createElement('video');v.muted=true;v.loop=true;v.playsInline=true;v.crossOrigin='anonymous';var url=null,rodando=false;
+function desenha(){if(v.readyState>=2&&v.videoWidth){
+  var w=Math.min(v.videoWidth,gl.getParameter(gl.MAX_TEXTURE_SIZE)),h=Math.round(w*v.videoHeight/v.videoWidth);
+  if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;gl.viewport(0,0,w,h)}
+  gl.bindTexture(gl.TEXTURE_2D,tx);try{gl.texImage2D(gl.TEXTURE_2D,0,gl.RGB,gl.RGB,gl.UNSIGNED_BYTE,v)}catch(e){}
+  gl.uniform2f(U.res,w,h);gl.uniform1f(U.esp,sEs.value/100);gl.uniform1f(U.sens,sSe.value/100);gl.uniform1f(U.cor,sCo.value/100);gl.uniform1f(U.split,sSp.value/100);gl.uniform1i(U.t,0);
+  gl.drawArrays(gl.TRIANGLE_STRIP,0,4)}}
+function lacos(){if(!rodando)return;desenha();if(v.requestVideoFrameCallback)v.requestVideoFrameCallback(lacos);else requestAnimationFrame(lacos)}
+function abre(src,nome){if(url){URL.revokeObjectURL(url);url=null}
+ if(src.indexOf('blob:')===0)url=src;v.src=src;v.load();
+ v.addEventListener('loadeddata',function f(){v.removeEventListener('loadeddata',f);tela.classList.add('on');bPl.disabled=false;bFu.disabled=false;v.play().catch(function(){});rodando=true;bPl.textContent='⏸ Pausar';
+  info.textContent=nome+' · '+v.videoWidth+'×'+v.videoHeight+' · efeito aplicado em tempo real pela sua placa de vídeo (prévia aproximada).';lacos()})}
+arq.addEventListener('change',function(){var f=arq.files&&arq.files[0];if(f)abre(URL.createObjectURL(f),f.name)});
+bEx.addEventListener('click',function(){abre('media/antes.mp4','Clipe de exemplo')});
+bPl.addEventListener('click',function(){if(v.paused){v.play();bPl.textContent='⏸ Pausar'}else{v.pause();bPl.textContent='▶ Continuar'}});
+bFu.addEventListener('click',function(){if(document.fullscreenElement)document.exitFullscreen();else if(tela.requestFullscreen)tela.requestFullscreen()});
+[sSp,sEs,sSe,sCo].forEach(function(s2){s2.addEventListener('input',function(){if(v.paused)desenha()})});
+['dragover','drop'].forEach(function(ev){tela.addEventListener(ev,function(e){e.preventDefault();if(ev==='drop'){var f=e.dataTransfer.files&&e.dataTransfer.files[0];if(f&&f.type.indexOf('video')===0)abre(URL.createObjectURL(f),f.name)}})});
 })();
 </script>
 </body>
