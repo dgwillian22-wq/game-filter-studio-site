@@ -204,7 +204,7 @@ else{
  (function buscar(){
   fetch(API+'/chave?ref='+ref,{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
    if(d.ok&&d.chave){$('serial').textContent=d.chave;$('titulo').innerHTML='Compra <span class="v">confirmada!</span>';mostrar('pronto');
-     try{if(window.fbq)fbq('track','Purchase');if(window.gtag)gtag('event','purchase')}catch(e){}return}
+     try{var vlr=39.9;if(window.fbq)fbq('track','Purchase',{value:vlr,currency:'BRL'});if(window.gtag)gtag('event','purchase',{value:vlr,currency:'BRL',transaction_id:ref})}catch(e){}return}
    if(d.status==='revogada'){falha('Pagamento <span class="v">cancelado</span>','Este pedido foi devolvido ou cancelado, por isso a chave não está mais ativa. Se foi um engano, fale com o suporte.');return}
    if(Date.now()-t0>10*60*1000){falha('Ainda <span class="v">aguardando</span>','O pagamento não foi confirmado em 10 minutos. Se você já pagou, a chave aparece aqui assim que o Asaas confirmar. Também dá para recuperar pela página abaixo.');return}
    setTimeout(buscar,espera)
