@@ -207,9 +207,9 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
     <span class="et a">ORIGINAL</span><span class="et d">COM WLSS</span>
     <div class="alca" role="slider" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><i>↔</i></div>
   </div>
-  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button><span class="qual" role="group" aria-label="Qualidade do vídeo"><button class="som q on" id="cmpHD" type="button" data-q="hd">HD</button><button class="som q" id="cmp4K" type="button" data-q="4k">4K</button></span><a class="som" href="https://www.youtube.com/watch?v=aEGtzGTWA0o&amp;t=600s" target="_blank" rel="noopener">Abrir em 4K no YouTube ↗</a></div>
+  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button><span class="qual" role="group" aria-label="Qualidade do vídeo"><button class="som q on" id="cmpHD" type="button" data-q="hd">HD</button><button class="som q" id="cmp4K" type="button" data-q="4k">4K</button></span><a class="som" href="https://www.youtube.com/watch?v=SzN0xOfDPwY&amp;t=552s" target="_blank" rel="noopener">Abrir em 4K no YouTube ↗</a></div>
   <p class="dica" id="cmpInfo">Reprodução local em HD · no 4K o YouTube escolhe a qualidade pelo tamanho da sua tela</p>
-  <p class="dica">Gameplay de Mortal Kombat 1 (canal MKIceAndFire, YouTube), usado só para demonstrar o filtro.</p>
+  <p class="dica">Gameplay de Marvel's Wolverine (canal GamerANH, YouTube), usado só para demonstrar o filtro.</p>
   <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o cell shading no meu jogo</a></div>
 </div></section>
 
@@ -449,7 +449,7 @@ document.querySelectorAll('.yt[data-id]').forEach(function(b){b.addEventListener
 (function(){var ba=document.getElementById('cmp');if(!ba)return;
 var va=ba.querySelector('.ant'),vd=ba.querySelector('.dep'),al=ba.querySelector('.alca'),ytq=document.getElementById('ytq'),
  pb=document.getElementById('cmpPlay'),sb=document.getElementById('cmpSom'),info=document.getElementById('cmpInfo'),qb=document.querySelectorAll('.cmp-bar .q'),
- YT_ID='aEGtzGTWA0o',YT_INI=600,YT_DUR=12,pos=50,arr=false,modo='hd',yt=null,ytPronto=false,manual=false,muda=true;
+ YT_ID='SzN0xOfDPwY',YT_INI=552,YT_DUR=12,pos=50,arr=false,modo='hd',yt=null,ytPronto=false,manual=false,muda=true;
 var grande=(window.innerWidth*(window.devicePixelRatio||1)>=2200)&&!(navigator.connection&&navigator.connection.saveData);
 va.dataset.sd=va.getAttribute('src');vd.dataset.sd=vd.getAttribute('src');
 function ajusta(p){pos=Math.max(2,Math.min(98,p));vd.style.clipPath='inset(0 0 0 '+pos+'%)';al.style.left=pos+'%';al.setAttribute('aria-valuenow',Math.round(pos))}
