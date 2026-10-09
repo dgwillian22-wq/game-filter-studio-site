@@ -134,8 +134,8 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 <span class="badge">Compra</span>
 <h1 id="titulo">Confirmando o seu <span class="v">pagamento...</span></h1>
 
-<div id="espera" class="caixa"><span class="spin"></span><b>Aguardando a confirmação do Mercado Pago.</b>
-  <p style="margin-top:10px">No PIX costuma levar alguns segundos. <b>Não feche esta página.</b> A sua chave também será enviada para o e-mail da compra.</p></div>
+<div id="espera" class="caixa"><span class="spin"></span><b>Aguardando a confirmação do pagamento.</b>
+  <p style="margin-top:10px">No PIX costuma levar alguns segundos. <b>Não feche esta página.</b> Quando a chave aparecer, copie e guarde. Se perder, use "Recuperar minha chave" no rodapé.</p></div>
 
 <div id="pronto" class="caixa ok oculto">
   <p style="margin-bottom:12px"><b>Pagamento aprovado. Esta é a sua chave de ativação:</b></p>
@@ -180,7 +180,7 @@ else{
    if(d.ok&&d.chave){$('serial').textContent=d.chave;$('titulo').innerHTML='Compra <span class="v">confirmada!</span>';mostrar('pronto');
      try{if(window.fbq)fbq('track','Purchase');if(window.gtag)gtag('event','purchase')}catch(e){}return}
    if(d.status==='revogada'){falha('Pagamento <span class="v">cancelado</span>','Este pedido foi devolvido ou cancelado, por isso a chave não está mais ativa. Se foi um engano, fale com o suporte.');return}
-   if(Date.now()-t0>10*60*1000){falha('Ainda <span class="v">aguardando</span>','O pagamento não foi confirmado em 10 minutos. Se você já pagou, a chave chega no seu e-mail assim que o Mercado Pago confirmar. Também dá para recuperar pela página abaixo.');return}
+   if(Date.now()-t0>10*60*1000){falha('Ainda <span class="v">aguardando</span>','O pagamento não foi confirmado em 10 minutos. Se você já pagou, a chave aparece aqui assim que o Asaas confirmar. Também dá para recuperar pela página abaixo.');return}
    setTimeout(buscar,espera)
   }).catch(function(){setTimeout(buscar,espera*2)})
  })()
