@@ -116,13 +116,21 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 @keyframes pulsa{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.06)}}
 .anime-g{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;margin-top:34px}.yt.vert{aspect-ratio:9/16;max-width:320px;margin:0 auto}
 @media(max-width:860px){.anime-g{grid-template-columns:1fr}}
+.cmp{position:relative;max-width:980px;margin:34px auto 0;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;border:1px solid rgba(57,255,20,.32);box-shadow:0 0 80px rgba(57,255,20,.14);touch-action:pan-y;user-select:none}
+.cmp video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.cmp .dep{clip-path:inset(0 0 0 50%)}
+.cmp .alca{position:absolute;top:0;bottom:0;left:50%;width:44px;margin-left:-22px;cursor:ew-resize;z-index:3;display:flex;align-items:center;justify-content:center}
+.cmp .alca:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background:var(--v);box-shadow:0 0 18px var(--glow)}
+.cmp .alca i{position:relative;width:46px;height:46px;border-radius:50%;background:var(--v);color:#000;font:900 18px Inter,sans-serif;display:flex;align-items:center;justify-content:center;font-style:normal;box-shadow:0 0 30px var(--glow)}
+.cmp .et{position:absolute;top:14px;z-index:2;background:rgba(0,0,0,.65);color:#fff;border-radius:6px;padding:6px 10px;font:800 12px Inter,sans-serif;letter-spacing:.08em}.cmp .et.a{left:14px}.cmp .et.d{right:14px;background:var(--v);color:#000}
+.cmp-bar{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
 </style>
 </head>
 <body>
 <div class="aviso">TESTE GRÁTIS — baixe e use agora, todos os efeitos liberados · <a data-download href="baixar.html">Baixar o teste</a></div>
 <header><div class="wrap hd">
   <a href="#topo" class="logo" aria-label="WLSS"><img src="img/logo.webp" alt="WLSS" width="115" height="52"></a>
-  <nav><a href="#demo">Em ação</a><a href="#anime">Anime</a><a href="#laplaciano">Laplaciano</a><a href="#recursos">Recursos</a><a href="#video">Exportar vídeo</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a></nav>
+  <nav><a href="#demo">Em ação</a><a href="#anime">Anime</a><a href="#celshading">Cell shading</a><a href="#laplaciano">Laplaciano</a><a href="#recursos">Recursos</a><a href="#video">Exportar vídeo</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a></nav>
   <a class="btn btn-v btn-sm" data-compra href="#oferta">Comprar agora</a>
 </div></header>
 
@@ -190,6 +198,20 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
     <div class="rv"><div class="yt vert" data-id="z5QuBhwvQMs" data-titulo="Anime antigo restaurado com IA no WLSS"><img src="https://i.ytimg.com/vi/z5QuBhwvQMs/hqdefault.jpg" alt="Anime antigo restaurado com IA no WLSS" loading="lazy"><button class="play" type="button" aria-label="Assistir ao vídeo">▶</button></div><p class="dica">▶ Veja funcionando (com som)</p></div>
   </div>
   <div class="cta-row" style="justify-content:center;margin-top:34px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero restaurar meus animes</a></div>
+</div></section>
+
+<section id="celshading"><div class="wrap">
+  <h2 class="rv">Cell shading <span class="v">em tempo real</span> no seu jogo</h2>
+  <p class="sub rv">O preset <b>LAP 1</b> aplicado por cima de um gameplay, sem editar o vídeo. Arraste a linha para comparar o original com o WLSS.</p>
+  <div class="cmp rv" id="cmp">
+    <video class="ant" src="media/antes.mp4" poster="media/poster.jpg" muted playsinline loop preload="metadata"></video>
+    <video class="dep" src="media/depois.mp4" muted playsinline loop preload="metadata"></video>
+    <span class="et a">ORIGINAL</span><span class="et d">COM WLSS</span>
+    <div class="alca" role="slider" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><i>↔</i></div>
+  </div>
+  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button></div>
+  <p class="dica">Gameplay de Mortal Kombat 1 (canal MKIceAndFire, YouTube), usado só para demonstrar o filtro.</p>
+  <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o cell shading no meu jogo</a></div>
 </div></section>
 
 <section id="laplaciano"><div class="wrap">
@@ -382,6 +404,23 @@ if(yf){if(sb)sb.addEventListener('click',function(){som(mudo)});if(ov)ov.addEven
 function primeiro(e){if(!mudo)return;if(e.target&&e.target.closest&&e.target.closest('#somBtn,#somOv'))return;som(true)}
 ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,primeiro,{once:true,passive:true})})}
 document.querySelectorAll('.yt[data-id]').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&start='+(b.dataset.start||0);f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.dataset.titulo||'Video';b.textContent='';b.appendChild(f);b.classList.add('on')})})})();
+(function(){var ba=document.getElementById('cmp');if(!ba)return;var va=ba.querySelector('.ant'),vd=ba.querySelector('.dep'),al=ba.querySelector('.alca'),pb=document.getElementById('cmpPlay'),sb=document.getElementById('cmpSom'),pos=50,arr=false,vis=false;
+function ajusta(p){pos=Math.max(2,Math.min(98,p));vd.style.clipPath='inset(0 0 0 '+pos+'%)';al.style.left=pos+'%'}
+function px(e){var r=ba.getBoundingClientRect();return((e.touches?e.touches[0].clientX:e.clientX)-r.left)/r.width*100}
+function ini(e){arr=true;ajusta(px(e));e.preventDefault()}
+function mov(e){if(arr){ajusta(px(e));e.preventDefault()}}
+function fim(){arr=false}
+ba.addEventListener('mousedown',ini);window.addEventListener('mousemove',mov);window.addEventListener('mouseup',fim);
+ba.addEventListener('touchstart',ini,{passive:false});window.addEventListener('touchmove',mov,{passive:false});window.addEventListener('touchend',fim);
+function toca(){va.play().catch(function(){});vd.play().catch(function(){});if(pb)pb.textContent='⏸ Pausar'}
+function pausa(){va.pause();vd.pause();if(pb)pb.textContent='▶ Continuar'}
+if(pb)pb.addEventListener('click',function(){if(va.paused)toca();else pausa()});
+if(sb)sb.addEventListener('click',function(){va.muted=!va.muted;sb.textContent=va.muted?'🔊 Ativar som':'🔇 Desligar som'});
+setInterval(function(){if(!va.paused&&Math.abs(va.currentTime-vd.currentTime)>0.12)vd.currentTime=va.currentTime},400);
+va.addEventListener('ended',function(){vd.currentTime=0;va.currentTime=0;toca()});
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(en){vis=en.isIntersecting;if(vis){if(va.paused&&!ba.dataset.manual)toca()}else if(!va.paused){pausa()}})},{threshold:.35}).observe(ba)}
+if(pb)pb.addEventListener('click',function(){ba.dataset.manual='1'});
+})();
 </script>
 </body>
 </html>
