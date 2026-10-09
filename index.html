@@ -103,13 +103,26 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 .lap-eq{margin-top:26px;background:var(--s1);border:1px dashed rgba(57,255,20,.4);border-radius:var(--r);padding:18px 20px;font:600 14px 'Inter';color:rgba(255,255,255,.75)}.lap-eq b{color:var(--v)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.on{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+.short-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+.short-frame{position:relative;aspect-ratio:9/16;width:min(100%,330px);max-height:586px;border-radius:24px;overflow:hidden;background:#000;border:1px solid rgba(57,255,20,.38);box-shadow:0 0 70px rgba(57,255,20,.2),0 20px 60px rgba(0,0,0,.6)}
+.short-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.som{background:rgba(57,255,20,.12);color:#fff;border:1px solid rgba(57,255,20,.45);border-radius:999px;padding:10px 20px;font:700 14px Inter,sans-serif;cursor:pointer}.som:hover{background:rgba(57,255,20,.25)}
+.yt{position:relative;aspect-ratio:16/9;width:100%;max-width:980px;margin:30px auto 0;border-radius:18px;overflow:hidden;background:#000;border:1px solid rgba(57,255,20,.3);box-shadow:0 0 80px rgba(57,255,20,.14);cursor:pointer}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85;transition:opacity .2s,transform .4s}.yt:hover img{opacity:1;transform:scale(1.02)}
+.yt .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;border:0;background:var(--v);color:#000;font-size:34px;cursor:pointer;box-shadow:0 0 50px var(--glow);padding-left:6px}
+.yt.on{cursor:default}.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:860px){.short-frame{width:min(100%,300px)}}
+.som-ov{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;background:var(--v);color:#000;border:0;border-radius:999px;padding:12px 22px;font:800 15px Inter,sans-serif;cursor:pointer;box-shadow:0 0 34px var(--glow);animation:pulsa 1.6s infinite}
+@keyframes pulsa{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.06)}}
+.anime-g{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;margin-top:34px}.yt.vert{aspect-ratio:9/16;max-width:320px;margin:0 auto}
+@media(max-width:860px){.anime-g{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="aviso">TESTE GRÁTIS — baixe e use agora, todos os efeitos liberados · <a data-download href="baixar.html">Baixar o teste</a></div>
 <header><div class="wrap hd">
   <a href="#topo" class="logo" aria-label="WLSS"><img src="img/logo.webp" alt="WLSS" width="115" height="52"></a>
-  <nav><a href="#resultados">Resultados</a><a href="#laplaciano">Laplaciano</a><a href="#recursos">Recursos</a><a href="#video">Exportar vídeo</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a></nav>
+  <nav><a href="#demo">Em ação</a><a href="#anime">Anime</a><a href="#laplaciano">Laplaciano</a><a href="#recursos">Recursos</a><a href="#video">Exportar vídeo</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a></nav>
   <a class="btn btn-v btn-sm" data-compra href="#oferta">Comprar agora</a>
 </div></header>
 
@@ -120,17 +133,13 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
       <span class="badge">O filtro de IA em tempo real para jogos e vídeos</span>
       <h1><span>Remaster</span><span class="v">em tempo real.</span></h1>
       <p class="lead">O WLSS roda por cima da tela e aplica cores vivas, restauração de anime, clima, aura, mármore, cromo e mais de 300 presets — direto na sua placa de vídeo. <b>Sem mods e sem mexer em arquivo do jogo.</b></p>
-      <div class="cta-row"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>Quero o WLSS</a><a class="ver" href="#resultados">Ver resultados ↓</a></div>
+      <div class="cta-row"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>Quero o WLSS</a><a class="ver" href="#demo">Ver funcionando ↓</a></div>
       <p class="micro"><b>7 dias de garantia</b> · teste grátis antes de comprar · R$ 39,90 pagamento único</p>
     </div>
-    <div class="rv"><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/witcher-por-do-sol.webp" alt="Cena original x WLSS: modo Pôr do sol — com WLSS" decoding="async">
-  <img class="ba-before" src="img/witcher-antes.webp" alt="Cena original x WLSS: modo Pôr do sol — original" decoding="async">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Cena original x WLSS: modo Pôr do sol</figcaption>
-</figure><p class="dica">↔ Arraste a linha para comparar o original com o WLSS</p></div>
+    <div class="short-wrap">
+      <div class="short-frame"><iframe id="ytShort" src="https://www.youtube-nocookie.com/embed/rI3WS7RMYGc?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=rI3WS7RMYGc&amp;controls=0&amp;playsinline=1&amp;rel=0&amp;modestbranding=1&amp;enablejsapi=1" title="WLSS em ação" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe><button class="som-ov" id="somOv" type="button">🔊 Toque para ouvir</button></div>
+      <button class="som" id="somBtn" type="button">🔊 Ativar som</button>
+    </div>
   </div>
   <div class="stats rv">
     <div class="st"><b>750+</b><span>controles</span></div>
@@ -139,6 +148,14 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
     <div class="st"><b>0</b><span>mods necessários</span></div>
     <a class="btn btn-v" data-compra href="#oferta">Quero o WLSS</a>
   </div>
+  <div class="rv" style="max-width:820px;margin:44px auto 0"><figure class="ba" style="--pos:50%;--ar:1100/618">
+  <img class="ba-after" src="img/witcher-por-do-sol.webp" alt="Cena original x WLSS: modo Pôr do sol — com WLSS" decoding="async">
+  <img class="ba-before" src="img/witcher-antes.webp" alt="Cena original x WLSS: modo Pôr do sol — original" decoding="async">
+  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
+  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
+  <span class="ba-handle" aria-hidden="true"></span>
+  <figcaption>Cena original x WLSS: modo Pôr do sol</figcaption>
+</figure><p class="dica">↔ Arraste a linha para comparar o original com o WLSS</p></div>
 </div>
 <div class="ticker" aria-hidden="true"><div><span>CYBERPUNK •</span><span>SYNTHWAVE •</span><span>TEAL & ORANGE •</span><span>OUTONO •</span><span>INVERNO •</span><span>NOITE ESTRELADA •</span><span>CHUVA •</span><span>AURA DE FOGO •</span><span>MÁRMORE •</span><span>CROMO LÍQUIDO •</span><span>SKETCH •</span><span>POP ART •</span><span>CARTOON 3D •</span><span>LAPLACIANO •</span><span>ANIME RESTAURADO •</span><span>HQ •</span><span>PELE LIMPA •</span><span>FUNDO CHROMA •</span><span>DESINTEGRAÇÃO •</span><span>SCANNER •</span><span>ESPELHO D'ÁGUA •</span><span>VISÃO TÉRMICA •</span><span>CYBERPUNK •</span><span>SYNTHWAVE •</span><span>TEAL & ORANGE •</span><span>OUTONO •</span><span>INVERNO •</span><span>NOITE ESTRELADA •</span><span>CHUVA •</span><span>AURA DE FOGO •</span><span>MÁRMORE •</span><span>CROMO LÍQUIDO •</span><span>SKETCH •</span><span>POP ART •</span><span>CARTOON 3D •</span><span>LAPLACIANO •</span><span>ANIME RESTAURADO •</span><span>HQ •</span><span>PELE LIMPA •</span><span>FUNDO CHROMA •</span><span>DESINTEGRAÇÃO •</span><span>SCANNER •</span><span>ESPELHO D'ÁGUA •</span><span>VISÃO TÉRMICA •</span></div></div>
 </section>
@@ -158,306 +175,21 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
   </div>
 </div></section>
 
-<section id="resultados" style="padding-top:20px"><div class="wrap">
-  <h2 class="rv">Confira os <span class="v">resultados</span></h2>
-  <p class="sub rv">Imagens reais geradas pelo próprio WLSS na mesma cena. Arraste a linha de cada foto para comparar.</p>
-  <div class="tabs rv" role="tablist"><button class="tab on" role="tab" data-tab="0">Mundo</button><button class="tab" role="tab" data-tab="1">Cor</button><button class="tab" role="tab" data-tab="2">Personagem</button><button class="tab" role="tab" data-tab="3">Arte e beleza</button><button class="tab" role="tab" data-tab="4">Anime</button></div>
-  <div class="rv"><div class="painel on" data-painel="0" role="tabpanel"><div class="grid-ba"><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/witcher-outono.webp" alt="Outono: a folhagem muda de cor — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/witcher-antes.webp" alt="Outono: a folhagem muda de cor — original" decoding="async" loading="lazy">
+<section id="anime"><div class="wrap">
+  <h2 class="rv">Melhore <span class="v">animes e desenhos antigos</span> com IA</h2>
+  <p class="sub rv">Aquele anime da infância cheio de ruído, borrado e com cor apagada ganha traço nítido, cor viva e mais resolução. Em tempo real, direto no player.</p>
+  <div class="anime-g">
+    <div class="rv"><figure class="ba" style="--pos:50%;--ar:1015/700">
+  <img class="ba-after" src="img/anime-velho-restaurado.webp" alt="Anime antigo restaurado e ampliado — com WLSS" decoding="async" loading="lazy">
+  <img class="ba-before" src="img/animevelho-antes.webp" alt="Anime antigo restaurado e ampliado — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Outono: a folhagem muda de cor</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/witcher-inverno.webp" alt="Inverno com neve — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/witcher-antes.webp" alt="Inverno com neve — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Inverno com neve</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/witcher-por-do-sol.webp" alt="Pôr do sol — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/witcher-antes.webp" alt="Pôr do sol — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Pôr do sol</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/witcher-chuva.webp" alt="Chuva e névoa — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/witcher-antes.webp" alt="Chuva e névoa — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Chuva e névoa</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/witcher-neve.webp" alt="Neve caindo — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/witcher-antes.webp" alt="Neve caindo — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Neve caindo</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1024/521">
-  <img class="ba-after" src="img/mundo-por-do-sol.webp" alt="Pôr do sol (cidade) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/gta-antes.webp" alt="Pôr do sol (cidade) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Pôr do sol (cidade)</figcaption>
-</figure></div></div><div class="painel" data-painel="1" role="tabpanel"><div class="grid-ba"><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-cyberpunk.webp" alt="Look Cyberpunk — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Look Cyberpunk — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Look Cyberpunk</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-synthwave.webp" alt="Look Synthwave — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Look Synthwave — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Look Synthwave</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-teal.webp" alt="Teal &amp; Orange (cinema) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Teal &amp; Orange (cinema) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Teal &amp; Orange (cinema)</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-termico.webp" alt="Visão térmica — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Visão térmica — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Visão térmica</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-gelo.webp" alt="Look Gelo — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Look Gelo — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Look Gelo</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-neon.webp" alt="Brilho neon nas bordas — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Brilho neon nas bordas — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Brilho neon nas bordas</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-scanner.webp" alt="Scanner que varre a cena — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Scanner que varre a cena — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Scanner que varre a cena</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1024/521">
-  <img class="ba-after" src="img/cor-lago.webp" alt="Espelho d&#x27;água — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/gta-antes.webp" alt="Espelho d&#x27;água — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Espelho d&#x27;água</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1024/521">
-  <img class="ba-after" src="img/jogos-ouro.webp" alt="Pele metálica dourada — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/gta-antes.webp" alt="Pele metálica dourada — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Pele metálica dourada</figcaption>
-</figure></div></div><div class="painel" data-painel="2" role="tabpanel"><div class="grid-ba"><figure class="ba" style="--pos:50%;--ar:1100/849">
-  <img class="ba-after" src="img/wolv-aura-fogo.webp" alt="Aura de fogo — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Aura de fogo — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Aura de fogo</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/849">
-  <img class="ba-after" src="img/wolv-aura-eletrica.webp" alt="Aura elétrica — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Aura elétrica — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Aura elétrica</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/849">
-  <img class="ba-after" src="img/wolv-cromo.webp" alt="Cromo líquido — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Cromo líquido — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Cromo líquido</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/849">
-  <img class="ba-after" src="img/wolv-marmore-negro.webp" alt="Mármore negro com veios dourados — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Mármore negro com veios dourados — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Mármore negro com veios dourados</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/849">
-  <img class="ba-after" src="img/wolv-fundo.webp" alt="Fundo trocado (degradê) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Fundo trocado (degradê) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Fundo trocado (degradê)</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/849">
-  <img class="ba-after" src="img/wolv-desintegracao.webp" alt="Desintegração em poeira — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Desintegração em poeira — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Desintegração em poeira</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:880/1100">
-  <img class="ba-after" src="img/kratos-marmore.webp" alt="Estátua de mármore — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/kratos-antes.webp" alt="Estátua de mármore — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Estátua de mármore</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:880/1100">
-  <img class="ba-after" src="img/kratos-cromo.webp" alt="Cromo — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/kratos-antes.webp" alt="Cromo — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Cromo</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:880/1100">
-  <img class="ba-after" src="img/kratos-aura.webp" alt="Aura elétrica — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/kratos-antes.webp" alt="Aura elétrica — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Aura elétrica</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-fundo.webp" alt="Fundo trocado no retrato — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Fundo trocado no retrato — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Fundo trocado no retrato</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1024/521">
-  <img class="ba-after" src="img/pers-fundo-verde.webp" alt="Fundo verde (chroma key) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/gta-antes.webp" alt="Fundo verde (chroma key) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Fundo verde (chroma key)</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1024/521">
-  <img class="ba-after" src="img/pers-desintegracao.webp" alt="Desintegração (jogo) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/gta-antes.webp" alt="Desintegração (jogo) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Desintegração (jogo)</figcaption>
-</figure></div></div><div class="painel" data-painel="3" role="tabpanel"><div class="grid-ba"><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-pele-limpa.webp" alt="Pele limpa (retoque de beleza) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Pele limpa (retoque de beleza) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Pele limpa (retoque de beleza)</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-melhorar.webp" alt="Melhorar imagem — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Melhorar imagem — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Melhorar imagem</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-sketch-cor.webp" alt="Lápis de cor — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Lápis de cor — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Lápis de cor</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-pop.webp" alt="Pop art — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Pop art — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Pop art</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-cartoon.webp" alt="Cartoon 3D — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Cartoon 3D — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Cartoon 3D</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-rotoscopio.webp" alt="Rotoscópio — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Rotoscópio — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Rotoscópio</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-cromo.webp" alt="Cromo líquido — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Cromo líquido — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Cromo líquido</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
-  <img class="ba-after" src="img/retrato-marmore.webp" alt="Estátua de mármore — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/retrato-antes.webp" alt="Estátua de mármore — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Estátua de mármore</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-pop-2x2.webp" alt="Pop art 2x2 (estilo Warhol) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Pop art 2x2 (estilo Warhol) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Pop art 2x2 (estilo Warhol)</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
-  <img class="ba-after" src="img/carro-sketch.webp" alt="Sketch de estúdio — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Sketch de estúdio — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Sketch de estúdio</figcaption>
-</figure></div></div><div class="painel" data-painel="4" role="tabpanel"><div class="grid-ba"><figure class="ba" style="--pos:50%;--ar:1015/700">
-  <img class="ba-after" src="img/anime-velho-restaurado.webp" alt="Anime antigo restaurado — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/animevelho-antes.webp" alt="Anime antigo restaurado — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Anime antigo restaurado</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1015/700">
-  <img class="ba-after" src="img/anime-velho-pop.webp" alt="Anime em pop art — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/animevelho-antes.webp" alt="Anime em pop art — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Anime em pop art</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1015/700">
-  <img class="ba-after" src="img/lap-anime-pro.webp" alt="Anime com linhas redesenhadas (Laplaciano) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/animevelho-antes.webp" alt="Anime com linhas redesenhadas (Laplaciano) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Anime com linhas redesenhadas (Laplaciano)</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1015/700">
-  <img class="ba-after" src="img/lap-anime-tom.webp" alt="Anime restaurado + linha tom sobre tom — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/animevelho-antes.webp" alt="Anime restaurado + linha tom sobre tom — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Anime restaurado + linha tom sobre tom</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/588">
-  <img class="ba-after" src="img/anime-depois.webp" alt="Anime restaurado (4x) — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/anime-antes.webp" alt="Anime restaurado (4x) — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Anime restaurado (4x)</figcaption>
-</figure></div></div></div>
-  <div style="text-align:center;margin-top:36px"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>Quero esses efeitos</a></div>
+  <figcaption>Anime antigo restaurado e ampliado</figcaption>
+</figure><p class="dica">↔ Arraste a linha: o anime antigo e o restaurado pelo WLSS</p></div>
+    <div class="rv"><div class="yt vert" data-id="z5QuBhwvQMs" data-titulo="Anime antigo restaurado com IA no WLSS"><img src="https://i.ytimg.com/vi/z5QuBhwvQMs/hqdefault.jpg" alt="Anime antigo restaurado com IA no WLSS" loading="lazy"><button class="play" type="button" aria-label="Assistir ao vídeo">▶</button></div><p class="dica">▶ Veja funcionando (com som)</p></div>
+  </div>
+  <div class="cta-row" style="justify-content:center;margin-top:34px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero restaurar meus animes</a></div>
 </div></section>
 
 <section id="laplaciano"><div class="wrap">
@@ -569,6 +301,13 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 <tr><td>Áudio</td><td>Regravado</td><td>O original, sem perda</td></tr>
 <tr><td>Trabalho</td><td>Assistir enquanto grava</td><td>Escolher e deixar processando</td></tr></tbody></table></div></section>
 
+<section id="demo"><div class="wrap">
+  <h2 class="rv">Veja o WLSS <span class="v">funcionando de verdade</span></h2>
+  <p class="sub rv">Sem edição e sem truque: o filtro rodando em tempo real. Aperte o play.</p>
+  <div class="yt rv" data-id="mhZ7TkMINmI" data-start="1036" data-titulo="WLSS funcionando de verdade"><img src="https://i.ytimg.com/vi/mhZ7TkMINmI/hqdefault.jpg" alt="Vídeo de demonstração do WLSS" loading="lazy"><button class="play" type="button" aria-label="Assistir ao vídeo">▶</button></div>
+  <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o WLSS</a></div>
+</div></section>
+
 <section id="oferta"><div class="wrap">
   <h2 class="rv">Leve o WLSS <span class="v">hoje</span></h2>
   <p class="sub rv">Um pagamento, para sempre. Baixe o teste grátis e decida com tudo liberado.</p>
@@ -631,6 +370,13 @@ function sc(){barra.classList.toggle('on',window.scrollY>hero.offsetHeight*0.9)}
 window.addEventListener('scroll',sc,{passive:true});sc();
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});document.querySelectorAll('.rv').forEach(function(e){io.observe(e)})}else{document.querySelectorAll('.rv').forEach(function(e){e.classList.add('on')})}
 })();
+(function(){var yf=document.getElementById('ytShort'),sb=document.getElementById('somBtn'),ov=document.getElementById('somOv'),mudo=true;
+function cmd(f,a){try{yf.contentWindow.postMessage(JSON.stringify({event:'command',func:f,args:a||[]}),'*')}catch(e){}}
+function som(on){mudo=!on;cmd(on?'unMute':'mute');if(on){cmd('setVolume',[100]);cmd('playVideo')}if(sb)sb.textContent=on?'🔇 Desligar som':'🔊 Ativar som';if(ov)ov.style.display=on?'none':''}
+if(yf){if(sb)sb.addEventListener('click',function(){som(mudo)});if(ov)ov.addEventListener('click',function(){som(true)});
+function primeiro(e){if(!mudo)return;if(e.target&&e.target.closest&&e.target.closest('#somBtn,#somOv'))return;som(true)}
+['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,primeiro,{once:true,passive:true})})}
+document.querySelectorAll('.yt[data-id]').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&start='+(b.dataset.start||0);f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.dataset.titulo||'Video';b.textContent='';b.appendChild(f);b.classList.add('on')})})})();
 </script>
 </body>
 </html>
