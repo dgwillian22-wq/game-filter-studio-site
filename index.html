@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "WLSS", "operatingSystem": "Windows 10, Windows 11", "applicationCategory": "MultimediaApplication", "description": "Overlay gráfico em tempo real para jogos e vídeos: cores, restauração de anime, clima, aura, mármore, cromo e mais de 300 presets.", "offers": {"@type": "Offer", "price": "39.90", "priceCurrency": "BRL"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "WLSS", "url": "https://wlss.com.br", "logo": "https://wlss.com.br/img/logo.png", "sameAs": ["https://www.facebook.com/profile.php?id=61583453572345", "https://www.instagram.com/wlss.app/"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Posso testar de graça antes de comprar?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Baixe o teste grátis agora, sem cartão e sem cadastro: todos os efeitos vêm liberados, só com uma marca d'água. Gostou? Ative com a chave por R$ 39,90, pagamento único, e a marca d'água some."}}, {"@type": "Question", "name": "Funciona em qualquer jogo?", "acceptedAnswer": {"@type": "Answer", "text": "O WLSS roda como uma camada transparente por cima da tela, capturando a imagem pelo Windows Graphics Capture. Funciona em jogos em janela ou sem bordas, emuladores, players de vídeo e navegador. Em jogos de tela cheia exclusiva, use o modo sem bordas."}}, {"@type": "Question", "name": "Posso ser banido por usar?", "acceptedAnswer": {"@type": "Answer", "text": "O WLSS não injeta nada no jogo nem altera arquivos dele: é só uma camada visual por cima da tela. Mesmo assim, em jogos online competitivos com anti-cheat (Valorant, CS2, Fortnite etc.) a recomendação é não usar."}}, {"@type": "Question", "name": "Quanto de desempenho eu perco?", "acceptedAnswer": {"@type": "Answer", "text": "Depende dos efeitos que você liga: tudo roda na sua placa de vídeo e o app mostra, em tempo real, quantos milissegundos cada quadro está custando. Efeitos leves (cor, nitidez) custam pouco; os de IA são mais pesados e é para isso que a RTX é recomendada."}}, {"@type": "Question", "name": "Quais os requisitos?", "acceptedAnswer": {"@type": "Answer", "text": "Windows 10 ou 11 e uma placa de vídeo com DirectX 11. Placa NVIDIA RTX é recomendada para os efeitos de IA (recorte do personagem, luz neural)."}}, {"@type": "Question", "name": "É assinatura?", "acceptedAnswer": {"@type": "Answer", "text": "Não. É pagamento único de R$ 39,90, sem mensalidade. A licença é conferida online: o app renova sozinho quando você o abre com internet e, se ficar offline, continua funcionando por até 14 dias sem precisar de internet."}}, {"@type": "Question", "name": "Como recebo a chave?", "acceptedAnswer": {"@type": "Answer", "text": "Você paga por PIX ou cartão. Assim que o pagamento é aprovado, a chave WLSS-XXXX-XXXX-XXXX aparece na tela e também chega no seu e-mail. No app, abra a aba Licença, cole a chave e clique em Ativar. Perdeu a chave? Use a página Recuperar minha chave."}}, {"@type": "Question", "name": "Dá para usar em vídeo baixado?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, de dois jeitos: rodando por cima do player (tempo real) ou usando o Exportar vídeo, que aplica o filtro quadro a quadro e entrega o arquivo pronto, com o áudio original, sem gravar a tela e sem perder resolução (requer o ffmpeg instalado)."}}, {"@type": "Question", "name": "E se eu não gostar?", "acceptedAnswer": {"@type": "Answer", "text": "Você tem 7 dias de garantia (direito de arrependimento): se não gostar, devolvemos o seu dinheiro e a chave é cancelada. E antes de comprar dá para testar de graça: todos os efeitos vêm liberados, só com uma marca d'água."}}, {"@type": "Question", "name": "Posso usar em mais de um computador?", "acceptedAnswer": {"@type": "Answer", "text": "Não: cada chave vale para 1 computador. Se você trocar de PC (ou formatar), fale com o suporte pelo WhatsApp que liberamos a chave para o novo computador."}}, {"@type": "Question", "name": "Apareceu um aviso do Windows ao abrir. É normal?", "acceptedAnswer": {"@type": "Answer", "text": "Pode aparecer a tela azul \"O Windows protegeu o seu PC\" (SmartScreen), porque o programa é novo e ainda não tem muitos downloads. Clique em Mais informações e depois em Executar assim mesmo. O arquivo baixado tem uma impressão digital (SHA-256) na página de download para você conferir."}}, {"@type": "Question", "name": "Perdi a chave. E agora?", "acceptedAnswer": {"@type": "Answer", "text": "Use a página Recuperar minha chave: informe o e-mail da compra e reenviamos. Se não chegar, chame o suporte no WhatsApp."}}]}</script>
 <style>
 :root{--bg:#080808;--s1:#0d0d0d;--s2:#111;--b:rgba(255,255,255,.07);--dim:rgba(255,255,255,.5);--v:#39FF14;--v2:#00e055;--vl:#c8ffbe;--glow:rgba(57,255,20,.35);--vd:rgba(57,255,20,.1);--wa:#25D366;--r:16px;--rl:22px;--rx:28px;--spring:cubic-bezier(.34,1.56,.64,1)}
@@ -155,6 +156,23 @@ body.home section{padding:36px 0}
 .j-th span{display:block;padding:6px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .j-th:hover img,.j-th.on img{opacity:1}.j-th.on{border-color:var(--v);box-shadow:0 0 22px var(--glow)}
 @media(max-width:760px){.j-thumbs{display:flex;overflow-x:auto;gap:8px;padding-bottom:8px;scroll-behavior:smooth}.j-th{flex:0 0 128px}}
+
+.lap-demo[hidden]{display:none}
+.lap-demo{background:var(--s1);border:1px solid var(--b);border-radius:var(--rl);padding:14px}
+.lap-tela{position:relative;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(57,255,20,.3)}
+.lap-tela canvas{display:block;width:100%;height:auto}.lap-tela .ba-tag{top:10px}
+.lap-imgs{display:flex;gap:8px;margin:12px 0 4px}
+.lap-imgs button{flex:1 1 0;border:2px solid transparent;border-radius:10px;padding:0;overflow:hidden;background:#000;cursor:pointer;opacity:.65}
+.lap-imgs button.on{border-color:var(--v);opacity:1;box-shadow:0 0 18px var(--glow)}.lap-imgs img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.lap-ctl{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin-top:10px}
+.lap-ctl label{display:block;font:600 13px Inter,sans-serif;color:#fff}
+.lap-ctl input[type=range]{display:block;width:100%;margin:6px 0 4px;accent-color:var(--v)}
+.lap-rot{font:700 11px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:12px 0 6px}
+.lap-seg{display:flex;flex-wrap:wrap;gap:6px}
+.lap-seg button{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 14px;font:700 13px Inter,sans-serif;cursor:pointer}
+.lap-seg button.on{background:var(--v);color:#000;border-color:var(--v)}
+.lap-acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+@media(max-width:560px){.lap-ctl{grid-template-columns:1fr}}
 header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#video"],header nav a[href="#recursos"]{display:none}}
 .conceito{max-width:820px;margin:22px auto 0;text-align:center;font-size:clamp(17px,2vw,21px);line-height:1.5;color:rgba(255,255,255,.82)}.conceito b{color:var(--v)}
 .vs.diff td:first-child{font-weight:700;color:#fff;white-space:nowrap}
@@ -270,16 +288,16 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
 
 <section id="celshading"><div class="wrap">
   <h2 class="rv">Cell shading <span class="v">em tempo real</span> no seu jogo</h2>
-  <p class="sub rv">O preset <b>LAP 1</b> aplicado por cima de um gameplay, sem editar o vídeo. Arraste a linha para comparar o original com o WLSS.</p>
+  <p class="sub rv">O preset <b>LAP 1</b> aplicado por cima de um gameplay em <b>4K</b>, sem editar o vídeo. Arraste a linha para comparar o original com o WLSS.</p>
   <div class="cmp rv" id="cmp">
-    <video class="ant" src="media/antes.mp4" poster="media/poster.jpg" muted playsinline loop preload="metadata"></video>
-    <div class="ytq" id="ytq" hidden></div>
-    <video class="dep" src="media/depois.mp4" muted playsinline loop preload="metadata"></video>
+    <video class="ant" src="media/antes_4k.mp4" data-sd="media/antes.mp4" poster="media/poster.jpg" muted playsinline loop preload="none"></video>
+    <video class="dep" src="media/depois_4k.mp4" data-sd="media/depois.mp4" muted playsinline loop preload="none"></video>
+    <span class="et" style="top:auto;bottom:14px;right:14px;background:rgba(0,0,0,.65)">4K · 60 FPS</span>
     <span class="et a">ORIGINAL</span><span class="et d">COM WLSS</span>
     <div class="alca" role="slider" aria-label="Comparar antes e depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><i>↔</i></div>
   </div>
-  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button><span class="qual" role="group" aria-label="Qualidade do vídeo"><button class="som q on" id="cmpHD" type="button" data-q="hd">HD</button><button class="som q" id="cmp4K" type="button" data-q="4k">4K</button></span><a class="som" href="https://www.youtube.com/watch?v=SzN0xOfDPwY&amp;t=552s" target="_blank" rel="noopener">Abrir em 4K no YouTube ↗</a></div>
-  <p class="dica" id="cmpInfo">Reprodução local em HD · no 4K o YouTube escolhe a qualidade pelo tamanho da sua tela</p>
+  <div class="cmp-bar"><button class="som" id="cmpPlay" type="button">⏸ Pausar</button><button class="som" id="cmpSom" type="button">🔊 Ativar som</button></div>
+  <p class="dica" id="cmpInfo">Gameplay em 4K (2160p, 60 quadros por segundo) com o preset LAP 1 aplicado pelo WLSS</p>
   <p class="dica">Gameplay de Marvel's Wolverine (canal GamerANH, YouTube), usado só para demonstrar o filtro.</p>
   <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o cell shading no meu jogo</a></div>
 </div></section>
@@ -297,14 +315,39 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
       <div class="lap-i"><span class="n">5</span><div><h4>Laplaciano IA</h4><p>Reforça o contorno do personagem usando o recorte de IA, e ainda preenche sombras geométricas estilo HQ.</p></div></div>
       <div class="lap-eq">Jogo ou vídeo <b>+ 1 preset</b> = anime, HQ, vetor ou ilustração. Sem redesenhar nada.</div>
     </div>
-    <div class="rv"><div class="grid-ba" style="grid-template-columns:1fr"><figure class="ba" style="--pos:50%;--ar:819/669;--arn:1.2242">
+    <div class="rv">
+      <div class="lap-demo" id="lapDemo" hidden>
+        <div class="lap-tela"><canvas id="lapCv" width="960" height="540" aria-label="Demonstração do Laplaciano ao vivo"></canvas><span class="ba-tag r" id="lapTag">LAPLACIANO AO VIVO</span></div>
+        <div class="lap-imgs" id="lapImgs">
+          <button type="button" class="on" data-src="img/retrato-antes.webp" aria-label="Retrato"><img src="img/retrato-antes.webp" alt="Retrato" loading="lazy"></button>
+          <button type="button" data-src="img/jogos/zelda.webp" aria-label="Zelda"><img src="img/jogos/zelda_t.webp" alt="Zelda" loading="lazy"></button>
+          <button type="button" data-src="img/jogos/wolverine.webp" aria-label="Wolverine"><img src="img/jogos/wolverine_t.webp" alt="Wolverine" loading="lazy"></button>
+          <button type="button" data-src="img/jogos/kratos.webp" aria-label="God of War"><img src="img/jogos/kratos_t.webp" alt="God of War" loading="lazy"></button>
+          <button type="button" data-src="img/jogos/witcher.webp" aria-label="Witcher 3"><img src="img/jogos/witcher_t.webp" alt="Witcher 3" loading="lazy"></button>
+        </div>
+        <div class="lap-ctl">
+          <label>Espessura da linha<input type="range" id="lEsp" min="0.5" max="4" step="0.1" value="1.5"></label>
+          <label>Força da linha<input type="range" id="lFor" min="0" max="1" step="0.05" value="1"></label>
+          <label>Detalhes: poucos → muitos<input type="range" id="lDet" min="0" max="1" step="0.05" value="0.6"></label>
+          <label>Suavizar (sem pontinhos)<input type="range" id="lSuav" min="0" max="3" step="0.25" value="1"></label>
+          <label>Cores chapadas (0 = desligado)<input type="range" id="lNiv" min="0" max="10" step="1" value="5"></label>
+        </div>
+        <p class="lap-rot">Cor da linha</p>
+        <div class="lap-seg" id="lCor" role="group" aria-label="Cor da linha"><button type="button" data-v="0" class="on">Preta</button><button type="button" data-v="1">Cor da imagem</button><button type="button" data-v="2">Tom sobre tom</button><button type="button" data-v="3">Branca</button></div>
+        <p class="lap-rot">Fundo</p>
+        <div class="lap-seg" id="lFundo" role="group" aria-label="Fundo"><button type="button" data-v="0" class="on">Com a imagem</button><button type="button" data-v="1">Só as linhas</button></div>
+        <div class="lap-acoes"><button type="button" class="som" id="lOrig">Segure para ver o original</button><button type="button" class="som" id="lReset">Restaurar</button></div>
+        <p class="dica" style="margin-top:12px">Demonstração simplificada, rodando no seu navegador. No WLSS são até 3 camadas independentes, curva da linha, sombras projetadas e Laplaciano IA.</p>
+      </div>
+      <div class="grid-ba lap-estatico" style="grid-template-columns:1fr"><figure class="ba" style="--pos:50%;--ar:819/669;--arn:1.2242">
   <img class="ba-after" src="img/lap-retrato-anime.webp" alt="Retrato em anime — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/retrato-antes.webp" alt="Retrato em anime — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Retrato em anime</figcaption>
-</figure></div></div>
+</figure></div>
+    </div>
   </div>
   <div style="text-align:center;margin-top:36px"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Quero o Laplaciano</a></div>
 </div></section>
@@ -413,7 +456,8 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
 <footer><div class="wrap">
   <div class="logo"><img src="img/logo.webp" alt="WLSS" width="132" height="60" loading="lazy"></div>
   <p style="margin-top:8px">por Willian Ludgero · versão 1.0.201 · Windows 10/11 · DirectX 11</p>
-  <p style="margin-top:8px"><a href="https://wa.me/5527997962890" target="_blank" rel="noopener">Falar no WhatsApp</a> · <a href="baixar.html">Baixar</a> · <a href="recuperar.html">Recuperar minha chave</a></p>
+  <p style="margin-top:8px"><a href="https://www.instagram.com/wlss.app/" target="_blank" rel="noopener me">Instagram @wlss.app</a> · <a href="https://www.facebook.com/profile.php?id=61583453572345" target="_blank" rel="noopener me">Facebook</a> · <a href="https://wa.me/5527997962890" target="_blank" rel="noopener">WhatsApp</a></p>
+  <p style="margin-top:8px"><a href="baixar.html">Baixar</a> · <a href="recuperar.html">Recuperar minha chave</a></p>
   <p style="margin-top:8px"><a href="termos.html">Termos de uso</a> · <a href="reembolso.html">Garantia e reembolso</a> · <a href="privacidade.html">Privacidade</a></p><p class="legal" style="margin-top:8px">Willian Luiz Ludgero Junior · 126.195.617-60 · Colatina - ES · dgwillian22@gmail.com</p>
   <p class="legal">Os nomes e imagens de jogos, filmes e animes citados pertencem aos seus donos e são usados apenas para demonstrar o resultado do filtro. Não use o WLSS em jogos online competitivos com anti-cheat.</p>
 </div></footer>
@@ -464,6 +508,88 @@ if(!calmo){setInterval(function(){
  p=(p+1)%chs.length;if(p===0)j=(j+1)%ths.length;aplica();
 },3300)}
 })();
+(function(){
+var box=document.getElementById('lapDemo');if(!box)return;
+var cv=document.getElementById('lapCv'),gl=null,prog=null,tex=null,U={},img=new Image(),pronto=false,orig=0,quer=false;
+var secao=document.getElementById('laplaciano');
+var VS='attribute vec2 p;varying vec2 v;void main(){v=p*0.5+0.5;gl_Position=vec4(p,0.,1.);}';
+var FS='precision mediump float;varying vec2 v;uniform sampler2D t;uniform vec2 tx;uniform float esp,forca,thr,suav,niv,cor,fundo,orig;'+
+'float lum(vec3 c){return dot(c,vec3(.299,.587,.114));}'+
+'vec3 am(vec2 uv){if(suav<0.01)return texture2D(t,uv).rgb;float r=suav;vec3 s=texture2D(t,uv).rgb*4.;'+
+'s+=texture2D(t,uv+vec2(r,0.)*tx).rgb*2.;s+=texture2D(t,uv-vec2(r,0.)*tx).rgb*2.;s+=texture2D(t,uv+vec2(0.,r)*tx).rgb*2.;s+=texture2D(t,uv-vec2(0.,r)*tx).rgb*2.;'+
+'s+=texture2D(t,uv+vec2(r,r)*tx).rgb;s+=texture2D(t,uv+vec2(-r,r)*tx).rgb;s+=texture2D(t,uv+vec2(r,-r)*tx).rgb;s+=texture2D(t,uv-vec2(r,r)*tx).rgb;return s/16.;}'+
+'float L(vec2 uv){return lum(am(uv));}'+
+'void main(){vec3 base=texture2D(t,v).rgb;if(orig>0.5){gl_FragColor=vec4(base,1.);return;}'+
+'vec2 o=tx*esp;float c=L(v);float n=L(v+vec2(0.,o.y)),s=L(v-vec2(0.,o.y)),e=L(v+vec2(o.x,0.)),w=L(v-vec2(o.x,0.));'+
+'float ne=L(v+o),nw=L(v+vec2(-o.x,o.y)),se=L(v+vec2(o.x,-o.y)),sw=L(v-o);'+
+'float lap=abs(8.*c-(n+s+e+w+ne+nw+se+sw))/8.*7.;float edge=smoothstep(thr,thr+0.08,lap);'+
+'vec3 col=base;if(niv>1.5)col=floor(col*niv+0.5)/niv;'+
+'if(fundo>0.5)col=(cor>2.5)?vec3(0.05):vec3(1.0);'+
+'float bl=lum(base);vec3 lc;if(cor<0.5)lc=vec3(0.04);else if(cor<1.5)lc=base*0.28;else if(cor<2.5)lc=(bl>0.5)?base*0.18:min(base*2.0+0.25,vec3(1.0));else lc=vec3(1.0);'+
+'gl_FragColor=vec4(mix(col,lc,edge*forca),1.);}';
+function sh(t,src){var s=gl.createShader(t);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s}
+function inicia(){
+ try{
+  gl=cv.getContext('webgl')||cv.getContext('experimental-webgl');if(!gl)return false;
+  prog=gl.createProgram();gl.attachShader(prog,sh(gl.VERTEX_SHADER,VS));gl.attachShader(prog,sh(gl.FRAGMENT_SHADER,FS));gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog,gl.LINK_STATUS))return false;
+  gl.useProgram(prog);
+  var b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+  var a=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
+  ['tx','esp','forca','thr','suav','niv','cor','fundo','orig','t'].forEach(function(n){U[n]=gl.getUniformLocation(prog,n)});
+  tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,tex);
+  gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+  return true;
+ }catch(e){return false}
+}
+function val(id){return parseFloat(document.getElementById(id).value)}
+function sel(id){var b=document.querySelector('#'+id+' .on');return b?parseFloat(b.dataset.v):0}
+var agendado=false;
+function desenha(){
+ if(!pronto||agendado)return;agendado=true;
+ requestAnimationFrame(function(){agendado=false;
+  gl.viewport(0,0,cv.width,cv.height);
+  gl.uniform2f(U.tx,1/cv.width,1/cv.height);
+  gl.uniform1f(U.esp,val('lEsp'));gl.uniform1f(U.forca,val('lFor'));
+  gl.uniform1f(U.thr,0.34-0.31*val('lDet'));
+  gl.uniform1f(U.suav,val('lSuav'));gl.uniform1f(U.niv,val('lNiv'));
+  gl.uniform1f(U.cor,sel('lCor'));gl.uniform1f(U.fundo,sel('lFundo'));gl.uniform1f(U.orig,orig);
+  gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+ });
+}
+function carrega(src){
+ pronto=false;img=new Image();
+ img.onload=function(){
+  var w=Math.min(img.naturalWidth,1100),h=Math.round(img.naturalHeight*w/img.naturalWidth);
+  cv.width=w;cv.height=h;cv.style.aspectRatio=w+'/'+h;
+  gl.bindTexture(gl.TEXTURE_2D,tex);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);
+  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);
+  gl.uniform1i(U.t,0);pronto=true;desenha();
+ };
+ img.src=src;
+}
+function liga(){
+ if(quer)return;quer=true;
+ if(!inicia()){return}
+ box.hidden=false;var st=document.querySelector('.lap-estatico');if(st)st.style.display='none';
+ carrega(document.querySelector('#lapImgs .on').dataset.src);
+ ['lEsp','lFor','lDet','lSuav','lNiv'].forEach(function(id){document.getElementById(id).addEventListener('input',desenha)});
+ ['lCor','lFundo'].forEach(function(id){document.getElementById(id).addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');desenha()})});
+ document.getElementById('lapImgs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');carrega(b.dataset.src)});
+ var bo=document.getElementById('lOrig'),tag=document.getElementById('lapTag');
+ function seg(v){orig=v;tag.textContent=v?'ORIGINAL':'LAPLACIANO AO VIVO';desenha()}
+ ['pointerdown'].forEach(function(ev){bo.addEventListener(ev,function(){seg(1)})});
+ ['pointerup','pointerleave','pointercancel'].forEach(function(ev){bo.addEventListener(ev,function(){seg(0)})});
+ document.getElementById('lReset').addEventListener('click',function(){
+  var d={lEsp:1.5,lFor:1,lDet:0.6,lSuav:1,lNiv:5};Object.keys(d).forEach(function(k){document.getElementById(k).value=d[k]});
+  [['lCor','0'],['lFundo','0']].forEach(function(pr){document.querySelectorAll('#'+pr[0]+' button').forEach(function(x){x.classList.toggle('on',x.dataset.v===pr[1])})});desenha();
+ });
+ var tocou=false;box.addEventListener('pointerdown',function(){if(tocou)return;tocou=true;try{if(window.fbq)fbq('trackCustom','LaplacianoAjustado')}catch(e){}});
+}
+if('IntersectionObserver' in window&&secao){new IntersectionObserver(function(es,ob){if(es[0].isIntersecting){liga();ob.disconnect()}},{rootMargin:'300px'}).observe(secao)}else{liga()}
+})();
 var mb=document.getElementById('maisBtn');if(mb){mb.addEventListener('click',function(){document.body.classList.add('ver-mais');mb.parentNode.style.display='none';track('ViewContent')})}
 var barra=document.getElementById('barra'),hero=document.getElementById('topo');
 function sc(){barra.classList.toggle('on',window.scrollY>hero.offsetHeight*0.9)}
@@ -483,11 +609,10 @@ function primeiro(e){if(!mudo)return;if(e.target&&e.target.closest&&e.target.clo
 ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,primeiro,{once:true,passive:true})})}
 document.querySelectorAll('.yt[data-id]').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&start='+(b.dataset.start||0);f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.dataset.titulo||'Video';b.textContent='';b.appendChild(f);b.classList.add('on')})})})();
 (function(){var ba=document.getElementById('cmp');if(!ba)return;
-var va=ba.querySelector('.ant'),vd=ba.querySelector('.dep'),al=ba.querySelector('.alca'),ytq=document.getElementById('ytq'),
- pb=document.getElementById('cmpPlay'),sb=document.getElementById('cmpSom'),info=document.getElementById('cmpInfo'),qb=document.querySelectorAll('.cmp-bar .q'),
- YT_ID='SzN0xOfDPwY',YT_INI=552,YT_DUR=12,pos=50,arr=false,modo='hd',yt=null,ytPronto=false,manual=false,muda=true;
-var grande=(window.innerWidth*(window.devicePixelRatio||1)>=2200)&&!(navigator.connection&&navigator.connection.saveData);
-va.dataset.sd=va.getAttribute('src');vd.dataset.sd=vd.getAttribute('src');
+var va=ba.querySelector('.ant'),vd=ba.querySelector('.dep'),al=ba.querySelector('.alca'),pb=document.getElementById('cmpPlay'),sb=document.getElementById('cmpSom'),
+ pos=50,arr=false,manual=false,muda=true;
+var grande=(window.innerWidth*(window.devicePixelRatio||1)>=1700)&&!(navigator.connection&&navigator.connection.saveData);
+if(!grande){va.src=va.dataset.sd;vd.src=vd.dataset.sd}
 function ajusta(p){pos=Math.max(2,Math.min(98,p));vd.style.clipPath='inset(0 0 0 '+pos+'%)';al.style.left=pos+'%';al.setAttribute('aria-valuenow',Math.round(pos))}
 function px(e){var r=ba.getBoundingClientRect();return((e.touches?e.touches[0].clientX:e.clientX)-r.left)/r.width*100}
 function ini(e){arr=true;ajusta(px(e));e.preventDefault()}
@@ -495,44 +620,15 @@ function mov(e){if(arr){ajusta(px(e));e.preventDefault()}}
 function fim(){arr=false}
 ba.addEventListener('mousedown',ini);window.addEventListener('mousemove',mov);window.addEventListener('mouseup',fim);
 ba.addEventListener('touchstart',ini,{passive:false});window.addEventListener('touchmove',mov,{passive:false});window.addEventListener('touchend',fim);
-function tocando(){return modo==='yt'?(ytPronto&&yt.getPlayerState&&yt.getPlayerState()===1):!va.paused}
-function toca(){if(modo==='yt'){if(ytPronto)yt.playVideo()}else{va.play().catch(function(){})}vd.play().catch(function(){});if(pb)pb.textContent='⏸ Pausar'}
-function pausa(){if(modo==='yt'){if(ytPronto)yt.pauseVideo()}else va.pause();vd.pause();if(pb)pb.textContent='▶ Continuar'}
+function tocando(){return !va.paused}
+function toca(){va.play().catch(function(){});vd.play().catch(function(){});if(pb)pb.textContent='⏸ Pausar'}
+function pausa(){va.pause();vd.pause();if(pb)pb.textContent='▶ Continuar'}
 if(pb)pb.addEventListener('click',function(){manual=true;if(tocando())pausa();else toca()});
-if(sb)sb.addEventListener('click',function(){muda=!muda;if(modo==='yt'&&ytPronto){if(muda)yt.mute();else{yt.unMute();yt.setVolume(100)}}else va.muted=muda;sb.textContent=muda?'🔊 Ativar som':'🔇 Desligar som'});
-var NOMEQ={hd2160:'4K',hd1440:'1440p',hd1080:'1080p',hd720:'720p',large:'480p',medium:'360p',small:'240p',tiny:'144p'};
-function marca(q){qb.forEach(function(b){b.classList.toggle('on',b.dataset.q===q)})}
-function carregaYT(cb){if(window.YT&&YT.Player)return cb();var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';var prev=window.onYouTubeIframeAPIReady;window.onYouTubeIframeAPIReady=function(){if(prev)prev();cb()};document.head.appendChild(s)}
-function paraYT(){ytq.hidden=true;va.style.visibility='';if(ytPronto){try{yt.pauseVideo()}catch(e){}}}
-function setQ(q){
- if(q==='hd'){var t=vd.currentTime,w=tocando();paraYT();modo='hd';marca('hd');var sv=[va.dataset.sd,vd.dataset.sd];[[va,sv[0]],[vd,sv[1]]].forEach(function(x){if(x[0].getAttribute('src')!==x[1]){x[0].src=x[1];x[0].load()}});
-  function volta(){try{va.currentTime=t;vd.currentTime=t}catch(e){}va.muted=muda;if(w)toca()}
-  if(va.readyState>=1)volta();else va.addEventListener('loadedmetadata',function f(){va.removeEventListener('loadedmetadata',f);volta()});
-  if(info)info.textContent='Reprodução local em HD';return}
- if(va.dataset.hd&&vd.dataset.hd){modo='hd';marca('4k');var t2=va.currentTime,w2=tocando();[[va,va.dataset.hd],[vd,vd.dataset.hd]].forEach(function(x){x[0].src=x[1];x[0].load()});va.addEventListener('loadedmetadata',function f(){va.removeEventListener('loadedmetadata',f);try{va.currentTime=t2;vd.currentTime=t2}catch(e){}if(w2)toca()});if(info)info.textContent='4K local';return}
- va.pause();va.style.visibility='hidden';ytq.hidden=false;modo='yt';marca('4k');if(info)info.textContent='Carregando o 4K do YouTube...';
- carregaYT(function(){
-  if(yt){try{yt.seekTo(YT_INI+(vd.currentTime%YT_DUR),true);yt.playVideo()}catch(e){}return}
-  var d=document.createElement('div');d.id='ytqp';ytq.appendChild(d);
-  yt=new YT.Player('ytqp',{host:'https://www.youtube-nocookie.com',videoId:YT_ID,width:'100%',height:'100%',
-   playerVars:{autoplay:1,mute:1,controls:0,start:YT_INI,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,fs:0,vq:'hd2160'},
-   events:{onReady:function(e){ytPronto=true;try{e.target.setPlaybackQuality('hd2160')}catch(x){}e.target.mute();e.target.seekTo(YT_INI,true);e.target.playVideo()},
-    onStateChange:function(e){if(e.data===1){try{e.target.setPlaybackQuality('hd2160')}catch(x){}setTimeout(function(){try{var qn=yt.getPlaybackQuality();if(info)info.textContent='YouTube: '+(NOMEQ[qn]||qn)+(qn==='hd2160'?' (4K)':' - o YouTube escolhe pela sua conexão e tela')}catch(x){}},2500)}}}});
- })}
-qb.forEach(function(b){b.addEventListener('click',function(){if(b.disabled)return;manual=true;setQ(b.dataset.q)})});
-setInterval(function(){
- if(modo==='yt'&&ytPronto&&yt.getCurrentTime){var t=yt.getCurrentTime(),rel=t-YT_INI;
-  if(rel>=YT_DUR-0.05||rel<-0.5){yt.seekTo(YT_INI,true);rel=0}
-  var st=yt.getPlayerState();
-  if(st===1){if(vd.paused)vd.play().catch(function(){});if(Math.abs(vd.currentTime-rel)>0.2)vd.currentTime=Math.max(0,rel)}
-  else if(st===2||st===3){if(!vd.paused)vd.pause()}
- }else if(modo==='hd'&&!va.paused&&Math.abs(va.currentTime-vd.currentTime)>0.12)vd.currentTime=va.currentTime},250);
-setInterval(function(){if(modo==='yt'&&ytPronto&&info&&yt.getPlaybackQuality&&yt.getPlayerState()===1){try{var qn=yt.getPlaybackQuality();if(qn&&qn!=='unknown')info.textContent='YouTube: '+(NOMEQ[qn]||qn)+(qn==='hd2160'?' (4K)':' - o YouTube escolhe pela sua conexão e tela')}catch(e){}if(yt.getPlaybackQuality()!=='hd2160'){try{yt.setPlaybackQuality('hd2160')}catch(e){}}}},2000);
+if(sb)sb.addEventListener('click',function(){muda=!muda;va.muted=muda;sb.textContent=muda?'🔊 Ativar som':'🔇 Desligar som'});
+setInterval(function(){if(!va.paused&&Math.abs(va.currentTime-vd.currentTime)>0.12)vd.currentTime=va.currentTime},250);
 va.addEventListener('ended',function(){vd.currentTime=0;va.currentTime=0;toca()});
-var jaIniciou=false;
 if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(en){
-  if(en.isIntersecting){if(!jaIniciou){jaIniciou=true;if(grande)setQ('4k')}if(!manual&&!tocando())toca()}
-  else if(tocando()){pausa()}})},{threshold:.35}).observe(ba)}
+  if(en.isIntersecting){if(!manual&&!tocando())toca()}else if(tocando()){pausa()}})},{threshold:.35}).observe(ba)}
 })();
 </script>
 </body>

@@ -142,6 +142,32 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+3){display:none}
 body.home section{padding:36px 0}
 }
 @media(max-width:1100px){.hd-dl{display:none}}.hd .logo{flex:none}
+
+.j-passo{display:flex;align-items:center;gap:10px;justify-content:center;font:700 15px Inter,sans-serif;margin:28px 0 12px;color:rgba(255,255,255,.88)}
+.j-passo b{width:26px;height:26px;border-radius:50%;background:var(--v);color:#000;display:inline-flex;align-items:center;justify-content:center;font:900 13px Outfit,sans-serif}
+.j-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:980px;margin:0 auto}
+.j-th{background:var(--s1);border:2px solid transparent;border-radius:12px;padding:0;cursor:pointer;overflow:hidden;color:#fff;text-align:center;font:600 12px Inter,sans-serif}
+.j-th img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.62;transition:opacity .2s}
+.j-th span{display:block;padding:6px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.j-th:hover img,.j-th.on img{opacity:1}.j-th.on{border-color:var(--v);box-shadow:0 0 22px var(--glow)}
+@media(max-width:760px){.j-thumbs{display:flex;overflow-x:auto;gap:8px;padding-bottom:8px;scroll-behavior:smooth}.j-th{flex:0 0 128px}}
+
+.lap-demo[hidden]{display:none}
+.lap-demo{background:var(--s1);border:1px solid var(--b);border-radius:var(--rl);padding:14px}
+.lap-tela{position:relative;border-radius:14px;overflow:hidden;background:#000;border:1px solid rgba(57,255,20,.3)}
+.lap-tela canvas{display:block;width:100%;height:auto}.lap-tela .ba-tag{top:10px}
+.lap-imgs{display:flex;gap:8px;margin:12px 0 4px}
+.lap-imgs button{flex:1 1 0;border:2px solid transparent;border-radius:10px;padding:0;overflow:hidden;background:#000;cursor:pointer;opacity:.65}
+.lap-imgs button.on{border-color:var(--v);opacity:1;box-shadow:0 0 18px var(--glow)}.lap-imgs img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.lap-ctl{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin-top:10px}
+.lap-ctl label{display:block;font:600 13px Inter,sans-serif;color:#fff}
+.lap-ctl input[type=range]{display:block;width:100%;margin:6px 0 4px;accent-color:var(--v)}
+.lap-rot{font:700 11px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:12px 0 6px}
+.lap-seg{display:flex;flex-wrap:wrap;gap:6px}
+.lap-seg button{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 14px;font:700 13px Inter,sans-serif;cursor:pointer}
+.lap-seg button.on{background:var(--v);color:#000;border-color:var(--v)}
+.lap-acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+@media(max-width:560px){.lap-ctl{grid-template-columns:1fr}}
 header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#video"],header nav a[href="#recursos"]{display:none}}
 .conceito{max-width:820px;margin:22px auto 0;text-align:center;font-size:clamp(17px,2vw,21px);line-height:1.5;color:rgba(255,255,255,.82)}.conceito b{color:var(--v)}
 .vs.diff td:first-child{font-weight:700;color:#fff;white-space:nowrap}
@@ -228,7 +254,8 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
 <footer><div class="wrap">
   <div class="logo" style="font-size:24px">WLSS<b>.</b></div>
   <p style="margin-top:8px">por Willian Ludgero · versão 1.0.201 · Windows 10/11 · DirectX 11</p>
-  <p style="margin-top:8px"><a href="https://wa.me/5527997962890" target="_blank" rel="noopener">Falar no WhatsApp</a> · <a href="baixar.html">Baixar</a> · <a href="recuperar.html">Recuperar minha chave</a></p>
+  <p style="margin-top:8px"><a href="https://www.instagram.com/wlss.app/" target="_blank" rel="noopener me">Instagram @wlss.app</a> · <a href="https://www.facebook.com/profile.php?id=61583453572345" target="_blank" rel="noopener me">Facebook</a> · <a href="https://wa.me/5527997962890" target="_blank" rel="noopener">WhatsApp</a></p>
+  <p style="margin-top:8px"><a href="baixar.html">Baixar</a> · <a href="recuperar.html">Recuperar minha chave</a></p>
   <p style="margin-top:8px"><a href="termos.html">Termos de uso</a> · <a href="reembolso.html">Garantia e reembolso</a> · <a href="privacidade.html">Privacidade</a></p><p class="legal" style="margin-top:8px">Willian Luiz Ludgero Junior · 126.195.617-60 · Colatina - ES · dgwillian22@gmail.com</p>
 </div></footer>
 </body>
