@@ -146,6 +146,15 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+3){display:none}
 body.home section{padding:36px 0}
 }
 @media(max-width:1100px){.hd-dl{display:none}}.hd .logo{flex:none}
+
+.j-passo{display:flex;align-items:center;gap:10px;justify-content:center;font:700 15px Inter,sans-serif;margin:28px 0 12px;color:rgba(255,255,255,.88)}
+.j-passo b{width:26px;height:26px;border-radius:50%;background:var(--v);color:#000;display:inline-flex;align-items:center;justify-content:center;font:900 13px Outfit,sans-serif}
+.j-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:980px;margin:0 auto}
+.j-th{background:var(--s1);border:2px solid transparent;border-radius:12px;padding:0;cursor:pointer;overflow:hidden;color:#fff;text-align:center;font:600 12px Inter,sans-serif}
+.j-th img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.62;transition:opacity .2s}
+.j-th span{display:block;padding:6px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.j-th:hover img,.j-th.on img{opacity:1}.j-th.on{border-color:var(--v);box-shadow:0 0 22px var(--glow)}
+@media(max-width:760px){.j-thumbs{display:flex;overflow-x:auto;gap:8px;padding-bottom:8px;scroll-behavior:smooth}.j-th{flex:0 0 128px}}
 header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#video"],header nav a[href="#recursos"]{display:none}}
 .conceito{max-width:820px;margin:22px auto 0;text-align:center;font-size:clamp(17px,2vw,21px);line-height:1.5;color:rgba(255,255,255,.82)}.conceito b{color:var(--v)}
 .vs.diff td:first-child{font-weight:700;color:#fff;white-space:nowrap}
@@ -214,39 +223,10 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
 
 <section id="universos"><div class="wrap">
   <span class="badge rv" style="display:table;margin:0 auto 16px">Um clique</span>
-  <h2 class="rv">A mesma cena. <span class="v">Outro mundo.</span></h2>
-  <p class="sub rv">Você joga o mesmo jogo, com o mesmo visual, há anos. E se um clique bastasse para ele parecer outro jogo? Toque num preset e veja o <b>mesmo quadro</b> mudar por completo.</p>
-  <div class="u-tabs rv" role="tablist"><button class="u-tab on" type="button" role="tab">Mundo</button><button class="u-tab" type="button" role="tab">Personagem</button><button class="u-tab" type="button" role="tab">Cidade</button><button class="u-tab" type="button" role="tab">Carro</button></div>
-  <div class="rv"><div class="u-stage on"><figure class="ba" style="--pos:50%;--ar:1100/618;--arn:1.7799">
-  <img class="ba-after" src="img/witcher-por-do-sol.webp" alt="Pôr do sol — com WLSS" decoding="async">
-  <img class="ba-before" src="img/witcher-antes.webp" alt="Pôr do sol — original" decoding="async">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Pôr do sol</figcaption>
-</figure><div class="u-chips"><button class="u-chip on" type="button" data-img="img/witcher-por-do-sol.webp" data-t="Pôr do sol">Pôr do sol</button><button class="u-chip" type="button" data-img="img/witcher-outono.webp" data-t="Outono">Outono</button><button class="u-chip" type="button" data-img="img/witcher-inverno.webp" data-t="Inverno">Inverno</button><button class="u-chip" type="button" data-img="img/witcher-chuva.webp" data-t="Chuva e névoa">Chuva e névoa</button><button class="u-chip" type="button" data-img="img/preset-zelda.webp" data-t="Cel shading">Cel shading</button><button class="u-chip" type="button" data-img="img/preset-zelda2.webp" data-t="Quadrinho">Quadrinho</button></div></div><div class="u-stage"><figure class="ba" style="--pos:50%;--ar:1100/849;--arn:1.2956">
-  <img class="ba-after" src="img/wolv-aura-fogo.webp" alt="Aura de fogo — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/wolv-antes.webp" alt="Aura de fogo — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Aura de fogo</figcaption>
-</figure><div class="u-chips"><button class="u-chip on" type="button" data-img="img/wolv-aura-fogo.webp" data-t="Aura de fogo">Aura de fogo</button><button class="u-chip" type="button" data-img="img/wolv-aura-eletrica.webp" data-t="Aura elétrica">Aura elétrica</button><button class="u-chip" type="button" data-img="img/wolv-cromo.webp" data-t="Cromo líquido">Cromo líquido</button><button class="u-chip" type="button" data-img="img/wolv-marmore-negro.webp" data-t="Mármore negro">Mármore negro</button><button class="u-chip" type="button" data-img="img/wolv-desintegracao.webp" data-t="Desintegração">Desintegração</button><button class="u-chip" type="button" data-img="img/wolv-fundo.webp" data-t="Fundo trocado">Fundo trocado</button></div></div><div class="u-stage"><figure class="ba" style="--pos:50%;--ar:1024/521;--arn:1.9655">
-  <img class="ba-after" src="img/mundo-por-do-sol.webp" alt="Pôr do sol — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/gta-antes.webp" alt="Pôr do sol — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Pôr do sol</figcaption>
-</figure><div class="u-chips"><button class="u-chip on" type="button" data-img="img/mundo-por-do-sol.webp" data-t="Pôr do sol">Pôr do sol</button><button class="u-chip" type="button" data-img="img/preset-gta10.webp" data-t="Realista sombrio">Realista sombrio</button><button class="u-chip" type="button" data-img="img/preset-gta9.webp" data-t="Cinema">Cinema</button><button class="u-chip" type="button" data-img="img/cor-lago.webp" data-t="Espelho d&#x27;água">Espelho d&#x27;água</button><button class="u-chip" type="button" data-img="img/jogos-ouro.webp" data-t="Dourado">Dourado</button><button class="u-chip" type="button" data-img="img/pers-desintegracao.webp" data-t="Desintegração">Desintegração</button></div></div><div class="u-stage"><figure class="ba" style="--pos:50%;--ar:1100/618;--arn:1.7799">
-  <img class="ba-after" src="img/carro-cyberpunk.webp" alt="Cyberpunk — com WLSS" decoding="async" loading="lazy">
-  <img class="ba-before" src="img/carro-antes.webp" alt="Cyberpunk — original" decoding="async" loading="lazy">
-  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
-  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
-  <span class="ba-handle" aria-hidden="true"></span>
-  <figcaption>Cyberpunk</figcaption>
-</figure><div class="u-chips"><button class="u-chip on" type="button" data-img="img/carro-cyberpunk.webp" data-t="Cyberpunk">Cyberpunk</button><button class="u-chip" type="button" data-img="img/carro-synthwave.webp" data-t="Synthwave">Synthwave</button><button class="u-chip" type="button" data-img="img/carro-teal.webp" data-t="Teal &amp; Orange">Teal &amp; Orange</button><button class="u-chip" type="button" data-img="img/carro-termico.webp" data-t="Visão térmica">Visão térmica</button><button class="u-chip" type="button" data-img="img/carro-gelo.webp" data-t="Gelo">Gelo</button><button class="u-chip" type="button" data-img="img/preset-lud5.webp" data-t="Cores vivas">Cores vivas</button></div></div></div>
-  <p class="dica" style="text-align:center">↔ Arraste a linha para comparar com o original · imagens reais do WLSS rodando por cima de jogos</p>
+  <h2 class="rv">Escolha o jogo. <span class="v">Escolha o filtro.</span></h2>
+  <p class="sub rv">Você joga o mesmo jogo, com o mesmo visual, há anos. E se um clique bastasse para ele parecer outro jogo? Escolha um jogo, escolha um filtro e arraste a linha: é o <b>mesmo quadro</b>, outro mundo.</p>
+  <div class="rv"><p class="j-passo"><b>1</b> Escolha o jogo</p><div class="j-thumbs"><button class="j-th on" type="button" data-j="zelda" data-n="Zelda: Twilight Princess"><img src="img/jogos/zelda_t.webp" alt="Zelda: Twilight Princess" width="240" height="135" loading="lazy"><span>Zelda</span></button><button class="j-th" type="button" data-j="avengers" data-n="Marvel&#x27;s Avengers"><img src="img/jogos/avengers_t.webp" alt="Marvel&#x27;s Avengers" width="240" height="135" loading="lazy"><span>Avengers</span></button><button class="j-th" type="button" data-j="wolverine" data-n="Marvel&#x27;s Wolverine"><img src="img/jogos/wolverine_t.webp" alt="Marvel&#x27;s Wolverine" width="240" height="135" loading="lazy"><span>Wolverine</span></button><button class="j-th" type="button" data-j="spiderman" data-n="Marvel&#x27;s Spider-Man"><img src="img/jogos/spiderman_t.webp" alt="Marvel&#x27;s Spider-Man" width="240" height="135" loading="lazy"><span>Spider-Man</span></button><button class="j-th" type="button" data-j="luta" data-n="Mortal Kombat 1"><img src="img/jogos/luta_t.webp" alt="Mortal Kombat 1" width="240" height="135" loading="lazy"><span>Mortal Kombat</span></button><button class="j-th" type="button" data-j="lara" data-n="Shadow of the Tomb Raider"><img src="img/jogos/lara_t.webp" alt="Shadow of the Tomb Raider" width="240" height="135" loading="lazy"><span>Lara Croft</span></button><button class="j-th" type="button" data-j="paisagem" data-n="Tomb Raider"><img src="img/jogos/paisagem_t.webp" alt="Tomb Raider" width="240" height="135" loading="lazy"><span>Tomb Raider</span></button><button class="j-th" type="button" data-j="resident" data-n="Resident Evil Village"><img src="img/jogos/resident_t.webp" alt="Resident Evil Village" width="240" height="135" loading="lazy"><span>Resident Evil</span></button><button class="j-th" type="button" data-j="witcher" data-n="The Witcher 3"><img src="img/jogos/witcher_t.webp" alt="The Witcher 3" width="240" height="135" loading="lazy"><span>Witcher 3</span></button><button class="j-th" type="button" data-j="kratos" data-n="God of War"><img src="img/jogos/kratos_t.webp" alt="God of War" width="240" height="135" loading="lazy"><span>God of War</span></button></div><div class="u-stage on"><figure class="ba" style="--pos:50%;--ar:16/9;--arn:1.7778"><img class="ba-after" src="img/jogos/zelda__zelda.webp" alt="Zelda: Twilight Princess com o filtro Cel shading" decoding="async"><img class="ba-before" src="img/jogos/zelda.webp" alt="Zelda: Twilight Princess original" decoding="async"><span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span><input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS"><span class="ba-handle" aria-hidden="true"></span><figcaption>Zelda: Twilight Princess · Cel shading</figcaption></figure></div><p class="j-passo"><b>2</b> Escolha o filtro</p><div class="u-chips"><button class="u-chip on" type="button" data-p="zelda" data-t="Cel shading" data-preset="ZELDA">Cel shading</button><button class="u-chip" type="button" data-p="zelda2" data-t="Quadrinho" data-preset="zelda2">Quadrinho</button><button class="u-chip" type="button" data-p="lap1" data-t="Tinta e linhas" data-preset="LAP1">Tinta e linhas</button><button class="u-chip" type="button" data-p="lud5" data-t="Cores vivas" data-preset="lud5">Cores vivas</button><button class="u-chip" type="button" data-p="gta10" data-t="Realista sombrio" data-preset="GTA 10">Realista sombrio</button><button class="u-chip" type="button" data-p="gta9" data-t="Cinema" data-preset="gta 9">Cinema</button></div></div>
+  <p class="dica" style="text-align:center">↔ Arraste a linha para comparar · imagens reais de jogos passadas pelo WLSS com presets criados por Willian Ludgero</p>
   <div class="cta-row" style="justify-content:center;margin-top:26px"><a class="btn btn-v btn-gg" data-download href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v9.2l3.3-3.3 1.4 1.4L12 16l-5.7-5.7 1.4-1.4 3.3 3.3zM5 18h14v2H5z"/></svg>Baixar grátis e testar</a><a class="btn btn-o" data-compra href="#oferta">Comprar por R$ 39,90</a></div>
 </div></section>
 
@@ -506,39 +486,32 @@ var tabs=document.querySelectorAll('.tab'),pn=document.querySelectorAll('.painel
 tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.classList.remove('on')});pn.forEach(function(x){x.classList.remove('on')});t.classList.add('on');document.querySelector('[data-painel="'+t.dataset.tab+'"]').classList.add('on')})});
 
 (function(){
-var stages=document.querySelectorAll('.u-stage'),tabs=document.querySelectorAll('.u-tab'),sec=document.getElementById('universos');
-if(!stages.length||!sec)return;
-var manual=false,cur=0,vis=false,pre=false,calmo=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-function setChip(st,chip){
- st.querySelectorAll('.u-chip').forEach(function(c){c.classList.toggle('on',c===chip)});
- var f=st.querySelector('.ba'),a=f.querySelector('.ba-after'),cap=f.querySelector('figcaption');
- var url=chip.dataset.img,im=new Image();
- function aplica(){if(!chip.classList.contains('on'))return;a.src=url;a.alt=chip.dataset.t+' — com WLSS';if(cap)cap.textContent=chip.dataset.t}
- im.src=url;if(im.decode){im.decode().then(aplica).catch(aplica)}else{im.onload=aplica}
- try{if(window.fbq&&manual)fbq('trackCustom','PresetTrocado',{preset:chip.dataset.t})}catch(e){}
+var sec=document.getElementById('universos'),st=sec&&sec.querySelector('.u-stage');
+if(!st)return;
+var f=st.querySelector('.ba'),aft=f.querySelector('.ba-after'),bef=f.querySelector('.ba-before'),cap=f.querySelector('figcaption'),inp=f.querySelector('input');
+var ths=sec.querySelectorAll('.j-th'),chs=sec.querySelectorAll('.u-chip');
+var j=0,p=0,manual=false,vis=false,pre=false,sweep=false,calmo=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function url(a,b){return 'img/jogos/'+a+(b?'__'+b:'')+'.webp'}
+function centra(th){var c=th.parentNode;if(c.scrollWidth>c.clientWidth+4)c.scrollLeft=th.offsetLeft-(c.clientWidth-th.clientWidth)/2}
+function aplica(){
+ var th=ths[j],ch=chs[p],u=url(th.dataset.j,ch.dataset.p),o=url(th.dataset.j),n=0;
+ ths.forEach(function(x,k){x.classList.toggle('on',k===j)});chs.forEach(function(x,k){x.classList.toggle('on',k===p)});centra(th);
+ function pronto(){if(++n<2)return;if(th!==ths[j]||ch!==chs[p])return;bef.src=o;bef.alt=th.dataset.n+' original';aft.src=u;aft.alt=th.dataset.n+' com o filtro '+ch.dataset.t;cap.textContent=th.dataset.n+' · '+ch.dataset.t}
+ var a=new Image(),b=new Image();a.onload=a.onerror=b.onload=b.onerror=pronto;a.src=u;b.src=o;
 }
-function show(i){cur=i;tabs.forEach(function(x,k){x.classList.toggle('on',k===i)});stages.forEach(function(x,k){x.classList.toggle('on',k===i)})}
-stages.forEach(function(st){
- st.querySelectorAll('.u-chip').forEach(function(c){c.addEventListener('click',function(){manual=true;setChip(st,c)})});
- st.addEventListener('pointerdown',function(){manual=true});
-});
-tabs.forEach(function(t,i){t.addEventListener('click',function(){manual=true;show(i)})});
-function preload(){if(pre)return;pre=true;document.querySelectorAll('.u-chip').forEach(function(c){var im=new Image();im.src=c.dataset.img})}
-function varre(){
- var f=stages[cur].querySelector('.ba'),inp=f.querySelector('input'),t0=null;
- function passo(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/1100),e=1-Math.pow(1-k,3),v=Math.round(96-46*e);f.style.setProperty('--pos',v+'%');if(inp)inp.value=v;if(k<1)requestAnimationFrame(passo)}
- requestAnimationFrame(passo);
-}
-var jaVarreu=false;
+function evento(nome,v){try{if(window.fbq&&manual)fbq('trackCustom',nome,v)}catch(e){}}
+ths.forEach(function(t,i){t.addEventListener('click',function(){manual=true;j=i;aplica();evento('JogoEscolhido',{jogo:t.dataset.n})})});
+chs.forEach(function(c,i){c.addEventListener('click',function(){manual=true;p=i;aplica();evento('PresetTrocado',{preset:c.dataset.preset})})});
+f.addEventListener('pointerdown',function(){manual=true});
+function preload(){if(pre)return;pre=true;chs.forEach(function(c){var im=new Image();im.src=url(ths[0].dataset.j,c.dataset.p)});var im2=new Image();im2.src=url(ths[1]?ths[1].dataset.j:ths[0].dataset.j)}
+function varre(){var t0=null;function passo(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/1100),e=1-Math.pow(1-k,3),v=Math.round(96-46*e);f.style.setProperty('--pos',v+'%');if(inp)inp.value=v;if(k<1)requestAnimationFrame(passo)}requestAnimationFrame(passo)}
 if('IntersectionObserver' in window){
- new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis){preload();if(!jaVarreu&&!calmo){jaVarreu=true;varre()}}},{threshold:.35}).observe(sec);
+ new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis){preload();if(!sweep&&!calmo){sweep=true;varre()}}},{threshold:.3}).observe(sec);
 }
 if(!calmo){setInterval(function(){
  if(manual||!vis||document.hidden)return;
- var st=stages[cur],cs=st.querySelectorAll('.u-chip'),k=0;
- cs.forEach(function(c,j){if(c.classList.contains('on'))k=j});
- setChip(st,cs[(k+1)%cs.length]);
-},3200)}
+ p=(p+1)%chs.length;if(p===0)j=(j+1)%ths.length;aplica();
+},3300)}
 })();
 var mb=document.getElementById('maisBtn');if(mb){mb.addEventListener('click',function(){document.body.classList.add('ver-mais');mb.parentNode.style.display='none';track('ViewContent')})}
 var barra=document.getElementById('barra'),hero=document.getElementById('topo');
