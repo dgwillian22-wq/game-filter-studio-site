@@ -7,7 +7,7 @@
 <meta name="description" content="Transforme qualquer jogo ou vídeo em tempo real: cores vivas, restauração de anime, clima, aura, mármore, cromo e mais de 300 presets. Sem mods, sem mensalidade. Teste grátis.">
 <meta property="og:type" content="website"><meta property="og:title" content="WLSS — Seu jogo e seus vídeos em outro nível, em tempo real">
 <meta property="og:description" content="Overlay de IA para Windows: remaster, anime, clima, aura e mais de 300 presets. Baixe o teste grátis."><meta property="og:image" content="https://wlss.com.br/img/og-wlss.jpg">
-<meta name="theme-color" content="#080808"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="canonical" href="https://wlss.com.br/"><meta property="og:url" content="https://wlss.com.br/"><meta name="theme-color" content="#080808"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "WLSS", "operatingSystem": "Windows 10, Windows 11", "applicationCategory": "MultimediaApplication", "description": "Overlay gráfico em tempo real para jogos e vídeos: cores, restauração de anime, clima, aura, mármore, cromo e mais de 300 presets.", "offers": {"@type": "Offer", "price": "39.90", "priceCurrency": "BRL"}}</script>
@@ -607,12 +607,15 @@ window.addEventListener('message',function(e){if(e.source!==yf.contentWindow)ret
 if(yf){if(sb)sb.addEventListener('click',function(){som(mudo)});if(ov)ov.addEventListener('click',function(){som(true)});
 function primeiro(e){if(!mudo)return;if(e.target&&e.target.closest&&e.target.closest('#somBtn,#somOv'))return;som(true)}
 ['pointerdown','keydown','touchstart'].forEach(function(ev){document.addEventListener(ev,primeiro,{once:true,passive:true})})}
-document.querySelectorAll('.yt[data-id]').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&start='+(b.dataset.start||0);f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.dataset.titulo||'Video';b.textContent='';b.appendChild(f);b.classList.add('on')})})})();
+document.querySelectorAll('.yt[data-id]').forEach(function(b){b.addEventListener('click',function(){if(b.classList.contains('on'))return;var f=document.createElement('iframe');var ini=b.dataset.start||0;f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1&start='+ini+'&origin='+encodeURIComponent(location.origin);f.referrerPolicy='strict-origin-when-cross-origin';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title=b.dataset.titulo||'Video';b.textContent='';b.appendChild(f);b.classList.add('on');
+ if(!b.nextElementSibling||!b.nextElementSibling.classList.contains('yt-alt')){var a=document.createElement('a');a.className='dica yt-alt';a.href='https://www.youtube.com/watch?v='+b.dataset.id+(ini?'&t='+ini+'s':'');a.target='_blank';a.rel='noopener';a.style.cssText='display:block;text-align:center;margin-top:12px;color:var(--v);font-weight:700';a.textContent='O vídeo não abriu? Assistir no YouTube ↗';b.parentNode.insertBefore(a,b.nextSibling)}})})})();
 (function(){var ba=document.getElementById('cmp');if(!ba)return;
 var va=ba.querySelector('.ant'),vd=ba.querySelector('.dep'),al=ba.querySelector('.alca'),pb=document.getElementById('cmpPlay'),sb=document.getElementById('cmpSom'),
  pos=50,arr=false,manual=false,muda=true;
 var grande=(window.innerWidth*(window.devicePixelRatio||1)>=1700)&&!(navigator.connection&&navigator.connection.saveData);
 if(!grande){va.src=va.dataset.sd;vd.src=vd.dataset.sd}
+var caiu=false;function reserva(){if(caiu)return;caiu=true;var t=va.currentTime||0;[va,vd].forEach(function(v){v.src=v.dataset.sd;v.load()});va.addEventListener('loadedmetadata',function f(){va.removeEventListener('loadedmetadata',f);try{va.currentTime=t;vd.currentTime=t}catch(e){}if(!manual||tocando())toca()})}
+va.addEventListener('error',reserva);vd.addEventListener('error',reserva);
 function ajusta(p){pos=Math.max(2,Math.min(98,p));vd.style.clipPath='inset(0 0 0 '+pos+'%)';al.style.left=pos+'%';al.setAttribute('aria-valuenow',Math.round(pos))}
 function px(e){var r=ba.getBoundingClientRect();return((e.touches?e.touches[0].clientX:e.clientX)-r.left)/r.width*100}
 function ini(e){arr=true;ajusta(px(e));e.preventDefault()}
