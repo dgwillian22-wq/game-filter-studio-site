@@ -128,14 +128,60 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 .cmp .ytq{position:absolute;inset:0;z-index:1;background:#000}.cmp .ytq iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}.cmp .ytq[hidden]{display:none}.cmp .dep{z-index:2}.cmp .et,.cmp .alca{z-index:3}
 .arte{max-width:1000px;margin:30px auto 0;border-radius:18px;overflow:hidden;border:1px solid rgba(57,255,20,.3);box-shadow:0 0 70px rgba(57,255,20,.12)}.arte img{display:block;width:100%;height:auto}.arte figcaption{padding:8px 0 10px;margin:0}
 
+
+.u-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.u-tab{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:10px 22px;font:700 14px Inter,sans-serif;cursor:pointer}.u-tab:hover{border-color:var(--v)}.u-tab.on{background:var(--v);color:#000;border-color:var(--v)}
+.u-stage{display:none;max-width:980px;margin:22px auto 0}.u-stage.on{display:block}.u-stage .ba{width:min(100%,calc(68vh * var(--arn,1.78)));max-width:none;margin:0 auto}
+.u-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.u-chip{background:rgba(57,255,20,.1);color:#fff;border:1px solid rgba(57,255,20,.4);border-radius:999px;padding:9px 16px;font:700 13px Inter,sans-serif;cursor:pointer;white-space:nowrap}.u-chip:hover{background:rgba(57,255,20,.22)}.u-chip.on{background:var(--v);color:#000;border-color:var(--v)}
+.risco{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:900px;margin:26px auto 0}
+.r1{display:flex;gap:10px;align-items:center;background:var(--s1);border:1px solid var(--b);border-radius:14px;padding:12px;font-size:13.5px;line-height:1.3;font-weight:600}
+.r1 b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--v);color:#000;display:flex;align-items:center;justify-content:center;font:900 14px Outfit,sans-serif}.r1 small{color:var(--dim);font-size:11.5px;font-weight:500}
+@media(max-width:760px){.risco{grid-template-columns:1fr 1fr}.u-chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:8px}.u-chip{flex:0 0 auto}}
+@media(max-width:760px){
+.vs.diff tbody tr:nth-child(n+4){display:none}
+#anime .anime-g>div:nth-child(2){display:none}
+body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+3){display:none}
+.qa summary{padding:14px 0}.qa p{padding-bottom:14px}
+section{padding:36px 0}
+}
 header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#video"],header nav a[href="#recursos"]{display:none}}
+.conceito{max-width:820px;margin:22px auto 0;text-align:center;font-size:clamp(17px,2vw,21px);line-height:1.5;color:rgba(255,255,255,.82)}.conceito b{color:var(--v)}
+.vs.diff td:first-child{font-weight:700;color:#fff;white-space:nowrap}
+.mais-wrap{display:none}
+@media(max-width:960px){
+.hero{padding:26px 0 0}.hero-g{gap:16px}
+.hero-g>div:first-child{display:contents}
+.hero-g .badge{order:1;justify-self:start}
+.hero-g h1{order:2;margin-top:2px}
+.hero-g p.lead{order:3;margin:0;font-size:16px;max-width:none}
+.hero-g .short-wrap{order:4}
+.hero-g .cta-row{order:5;margin-top:2px}
+.hero-g .micro{order:6;margin-top:0}
+}
+@media(max-width:760px){
+section{padding:44px 0}
+.stats,.ticker{display:none}
+.hero .cta-row{flex-direction:column;align-items:stretch}.hero .cta-row .btn{justify-content:center;text-align:center;width:100%}
+main{display:flex;flex-direction:column}
+main>section{order:8}
+main>.hero{order:0}#universos{order:1}#diferente{order:2}#como{order:3}#anime{order:4}#celshading{order:5}#presets{order:6}
+.mais-wrap{display:block;order:7;text-align:center;padding:4px 22px 30px}
+main>.mais{display:none;order:8}body.ver-mais main>.mais{display:block}
+#oferta{order:9}.criador-sec{order:10}#faq{order:11}.final{order:12}
+body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
+.vs.diff thead{display:none}.vs.diff,.vs.diff tbody,.vs.diff tr,.vs.diff td{display:block;width:100%}
+.vs.diff tr{padding:12px 4px;border-bottom:1px solid var(--b)}.vs.diff tr:last-child{border-bottom:0}
+.vs.diff td{border:0;padding:3px 12px}.vs.diff td:first-child{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--v)}
+.vs.diff td[data-l]::before{content:attr(data-l)": ";font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.55;font-weight:600}
+}
 </style>
 </head>
 <body>
-<div class="aviso">TESTE GRÁTIS — baixe e use agora, todos os efeitos liberados · <a data-download href="baixar.html">Baixar o teste</a></div>
+<div class="aviso">TESTE GRÁTIS — todos os efeitos liberados (com marca d'água) · <a data-download href="baixar.html">Baixar o teste</a></div>
 <header><div class="wrap hd">
   <a href="#topo" class="logo" aria-label="WLSS"><img src="img/logo.webp" alt="WLSS" width="115" height="52"></a>
-  <nav><a href="#demo">Em ação</a><a href="#anime">Anime</a><a href="#celshading">Cell shading</a><a href="#presets">Presets</a><a href="#laplaciano">Laplaciano</a><a href="#recursos">Recursos</a><a href="#video">Exportar vídeo</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a></nav>
+  <nav><a href="#universos">Um clique</a><a href="#demo">Em ação</a><a href="#anime">Anime</a><a href="#celshading">Cell shading</a><a href="#presets">Presets</a><a href="#laplaciano">Laplaciano</a><a href="#recursos">Recursos</a><a href="#video">Exportar vídeo</a><a href="#oferta">Preço</a><a href="#faq">Dúvidas</a></nav>
   <a class="btn btn-v btn-sm" data-compra href="#oferta">Comprar agora</a>
 </div></header>
 
@@ -145,9 +191,9 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
     <div>
       <span class="badge">O filtro de IA em tempo real para jogos e vídeos</span>
       <h1><span>Remaster</span><span class="v">em tempo real.</span></h1>
-      <p class="lead">O WLSS roda por cima da tela e aplica cores vivas, restauração de anime, clima, aura, mármore, cromo e mais de 300 presets — direto na sua placa de vídeo. <b>Sem mods e sem mexer em arquivo do jogo.</b></p>
-      <div class="cta-row"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>Quero o WLSS</a><a class="ver" href="#demo">Ver funcionando ↓</a></div>
-      <p class="micro"><b>7 dias de garantia</b> · teste grátis antes de comprar · R$ 39,90 pagamento único</p>
+      <p class="lead">Aperte <b>F9</b> e o seu jogo, anime ou vídeo muda de visual na hora: cell shading, anime restaurado, realista e mais de 300 presets, direto na sua placa de vídeo. <b>Sem mod e sem mexer nos arquivos do jogo.</b></p>
+      <div class="cta-row"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Comprar por R$ 39,90</a><a class="btn btn-o" data-download href="#">Baixar teste grátis</a></div>
+      <p class="micro"><b>7 dias de garantia</b> · pagamento único, sem mensalidade · Windows 10/11</p>
     </div>
     <div class="short-wrap">
       <div class="short-frame"><iframe id="ytShort" src="https://www.youtube-nocookie.com/embed/rI3WS7RMYGc?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=rI3WS7RMYGc&amp;controls=1&amp;playsinline=1&amp;rel=0&amp;modestbranding=1&amp;enablejsapi=1" title="WLSS em ação" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe><button class="som-ov" id="somOv" type="button">🔊 Toque para ouvir</button></div>
@@ -165,18 +211,62 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
 <div class="ticker" aria-hidden="true"><div><span>CYBERPUNK •</span><span>SYNTHWAVE •</span><span>TEAL & ORANGE •</span><span>OUTONO •</span><span>INVERNO •</span><span>NOITE ESTRELADA •</span><span>CHUVA •</span><span>AURA DE FOGO •</span><span>MÁRMORE •</span><span>CROMO LÍQUIDO •</span><span>SKETCH •</span><span>POP ART •</span><span>CARTOON 3D •</span><span>LAPLACIANO •</span><span>ANIME RESTAURADO •</span><span>HQ •</span><span>PELE LIMPA •</span><span>FUNDO CHROMA •</span><span>DESINTEGRAÇÃO •</span><span>SCANNER •</span><span>ESPELHO D'ÁGUA •</span><span>VISÃO TÉRMICA •</span><span>CYBERPUNK •</span><span>SYNTHWAVE •</span><span>TEAL & ORANGE •</span><span>OUTONO •</span><span>INVERNO •</span><span>NOITE ESTRELADA •</span><span>CHUVA •</span><span>AURA DE FOGO •</span><span>MÁRMORE •</span><span>CROMO LÍQUIDO •</span><span>SKETCH •</span><span>POP ART •</span><span>CARTOON 3D •</span><span>LAPLACIANO •</span><span>ANIME RESTAURADO •</span><span>HQ •</span><span>PELE LIMPA •</span><span>FUNDO CHROMA •</span><span>DESINTEGRAÇÃO •</span><span>SCANNER •</span><span>ESPELHO D'ÁGUA •</span><span>VISÃO TÉRMICA •</span></div></div>
 </section>
 
-<section id="recursos"><div class="wrap">
-  <h2 class="rv">O que o WLSS <span class="v">faz por você</span></h2>
-  <p class="sub rv">Pare de ver o mesmo visual de sempre. Um painel só com tudo para transformar a imagem.</p>
-  <div class="grid4">
-    <div class="card rv"><div class="ic">⚡</div><h3>Tempo real na GPU</h3><p>Camada transparente por cima de qualquer janela. F9 liga e desliga, F8 salva a captura. O app mostra o custo de cada quadro.</p></div>
-    <div class="card rv"><div class="ic">🎌</div><h3>Restaurar anime antigo</h3><p>Limpa ruído e compressão, afia o traço e restaura as cores. Remove as linhas do desenho se você quiser redesenhar.</p></div>
-    <div class="card rv"><div class="ic">🌍</div><h3>Mundo: estação e clima</h3><p>Outono, inverno com neve, pôr do sol, noite com estrelas e lua, névoa, chuva e neve caindo.</p></div>
-    <div class="card rv"><div class="ic">🧍</div><h3>Personagem com IA</h3><p>Recorta o personagem para trocar o fundo, criar aura de fogo ou elétrica, desintegrar em poeira, virar mármore ou cromo.</p></div>
-    <div class="card rv"><div class="ic">🎨</div><h3>Arte e beleza</h3><p>Sketch de estúdio, cartoon 3D, pop art Warhol, rotoscópio, pele limpa (retoque) e melhorar imagem com dehaze.</p></div>
-    <div class="card rv"><div class="ic">🎬</div><h3>Exportar vídeo filtrado</h3><p>Aplique o filtro em um vídeo baixado e receba o MP4 pronto, com o áudio original — sem gravar a tela.</p></div>
-    <div class="card rv"><div class="ic">✒️</div><h3>Laplaciano: linhas e contornos</h3><p>O motor de linhas do WLSS: transforma a imagem em anime, HQ ou vetor, em até 3 camadas. <a href="#laplaciano" style="color:var(--v);font-weight:700">Ver como funciona →</a></p></div>
-    <div class="card rv"><div class="ic">🗂️</div><h3>Presets e importação</h3><p>Importe .json, .xmp do Lightroom e LUTs .cube. Seus presets salvos ficam protegidos nas atualizações.</p></div>
+<section id="universos"><div class="wrap">
+  <span class="badge rv" style="display:table;margin:0 auto 16px">Um clique</span>
+  <h2 class="rv">A mesma cena. <span class="v">Outro mundo.</span></h2>
+  <p class="sub rv">Você joga o mesmo jogo, com o mesmo visual, há anos. E se um clique bastasse para ele parecer outro jogo? Toque num preset e veja o <b>mesmo quadro</b> mudar por completo.</p>
+  <div class="u-tabs rv" role="tablist"><button class="u-tab on" type="button" role="tab">Mundo</button><button class="u-tab" type="button" role="tab">Personagem</button><button class="u-tab" type="button" role="tab">Cidade</button><button class="u-tab" type="button" role="tab">Carro</button></div>
+  <div class="rv"><div class="u-stage on"><figure class="ba" style="--pos:50%;--ar:1100/618;--arn:1.7799">
+  <img class="ba-after" src="img/witcher-por-do-sol.webp" alt="Pôr do sol — com WLSS" decoding="async">
+  <img class="ba-before" src="img/witcher-antes.webp" alt="Pôr do sol — original" decoding="async">
+  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
+  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
+  <span class="ba-handle" aria-hidden="true"></span>
+  <figcaption>Pôr do sol</figcaption>
+</figure><div class="u-chips"><button class="u-chip on" type="button" data-img="img/witcher-por-do-sol.webp" data-t="Pôr do sol">Pôr do sol</button><button class="u-chip" type="button" data-img="img/witcher-outono.webp" data-t="Outono">Outono</button><button class="u-chip" type="button" data-img="img/witcher-inverno.webp" data-t="Inverno">Inverno</button><button class="u-chip" type="button" data-img="img/witcher-chuva.webp" data-t="Chuva e névoa">Chuva e névoa</button><button class="u-chip" type="button" data-img="img/preset-zelda.webp" data-t="Cel shading">Cel shading</button><button class="u-chip" type="button" data-img="img/preset-zelda2.webp" data-t="Quadrinho">Quadrinho</button></div></div><div class="u-stage"><figure class="ba" style="--pos:50%;--ar:1100/849;--arn:1.2956">
+  <img class="ba-after" src="img/wolv-aura-fogo.webp" alt="Aura de fogo — com WLSS" decoding="async" loading="lazy">
+  <img class="ba-before" src="img/wolv-antes.webp" alt="Aura de fogo — original" decoding="async" loading="lazy">
+  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
+  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
+  <span class="ba-handle" aria-hidden="true"></span>
+  <figcaption>Aura de fogo</figcaption>
+</figure><div class="u-chips"><button class="u-chip on" type="button" data-img="img/wolv-aura-fogo.webp" data-t="Aura de fogo">Aura de fogo</button><button class="u-chip" type="button" data-img="img/wolv-aura-eletrica.webp" data-t="Aura elétrica">Aura elétrica</button><button class="u-chip" type="button" data-img="img/wolv-cromo.webp" data-t="Cromo líquido">Cromo líquido</button><button class="u-chip" type="button" data-img="img/wolv-marmore-negro.webp" data-t="Mármore negro">Mármore negro</button><button class="u-chip" type="button" data-img="img/wolv-desintegracao.webp" data-t="Desintegração">Desintegração</button><button class="u-chip" type="button" data-img="img/wolv-fundo.webp" data-t="Fundo trocado">Fundo trocado</button></div></div><div class="u-stage"><figure class="ba" style="--pos:50%;--ar:1024/521;--arn:1.9655">
+  <img class="ba-after" src="img/mundo-por-do-sol.webp" alt="Pôr do sol — com WLSS" decoding="async" loading="lazy">
+  <img class="ba-before" src="img/gta-antes.webp" alt="Pôr do sol — original" decoding="async" loading="lazy">
+  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
+  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
+  <span class="ba-handle" aria-hidden="true"></span>
+  <figcaption>Pôr do sol</figcaption>
+</figure><div class="u-chips"><button class="u-chip on" type="button" data-img="img/mundo-por-do-sol.webp" data-t="Pôr do sol">Pôr do sol</button><button class="u-chip" type="button" data-img="img/preset-gta10.webp" data-t="Realista sombrio">Realista sombrio</button><button class="u-chip" type="button" data-img="img/preset-gta9.webp" data-t="Cinema">Cinema</button><button class="u-chip" type="button" data-img="img/cor-lago.webp" data-t="Espelho d&#x27;água">Espelho d&#x27;água</button><button class="u-chip" type="button" data-img="img/jogos-ouro.webp" data-t="Dourado">Dourado</button><button class="u-chip" type="button" data-img="img/pers-desintegracao.webp" data-t="Desintegração">Desintegração</button></div></div><div class="u-stage"><figure class="ba" style="--pos:50%;--ar:1100/618;--arn:1.7799">
+  <img class="ba-after" src="img/carro-cyberpunk.webp" alt="Cyberpunk — com WLSS" decoding="async" loading="lazy">
+  <img class="ba-before" src="img/carro-antes.webp" alt="Cyberpunk — original" decoding="async" loading="lazy">
+  <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
+  <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
+  <span class="ba-handle" aria-hidden="true"></span>
+  <figcaption>Cyberpunk</figcaption>
+</figure><div class="u-chips"><button class="u-chip on" type="button" data-img="img/carro-cyberpunk.webp" data-t="Cyberpunk">Cyberpunk</button><button class="u-chip" type="button" data-img="img/carro-synthwave.webp" data-t="Synthwave">Synthwave</button><button class="u-chip" type="button" data-img="img/carro-teal.webp" data-t="Teal &amp; Orange">Teal &amp; Orange</button><button class="u-chip" type="button" data-img="img/carro-termico.webp" data-t="Visão térmica">Visão térmica</button><button class="u-chip" type="button" data-img="img/carro-gelo.webp" data-t="Gelo">Gelo</button><button class="u-chip" type="button" data-img="img/preset-lud5.webp" data-t="Cores vivas">Cores vivas</button></div></div></div>
+  <p class="dica" style="text-align:center">↔ Arraste a linha para comparar com o original · imagens reais do WLSS rodando por cima de jogos</p>
+  <div class="cta-row" style="justify-content:center;margin-top:26px"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Quero mudar o visual dos meus jogos</a><a class="btn btn-o" data-download href="#">Baixar teste grátis</a></div>
+</div></section>
+
+<section id="diferente"><div class="wrap">
+  <h2 class="rv">Por que o WLSS é <span class="v">diferente</span></h2>
+  <p class="conceito rv">O WLSS não depende do jogo. Ele trabalha <b>por cima da imagem que aparece na tela</b>, por isso funciona em jogos, emuladores, players de vídeo e animes, sem mod e sem instalar nada no jogo.</p>
+  <table class="vs diff rv"><thead><tr><th></th><th>Do jeito antigo</th><th>Com o WLSS</th></tr></thead><tbody>
+  <tr><td>Instalação</td><td data-l="Do jeito antigo">Um mod ou filtro diferente para cada jogo</td><td data-l="Com o WLSS">Um app só, para qualquer jogo, emulador ou player</td></tr>
+  <tr><td>Arquivos do jogo</td><td data-l="Do jeito antigo">Editar arquivos e arriscar quebrar o jogo</td><td data-l="Com o WLSS">Nada é editado nem injetado no jogo</td></tr>
+  <tr><td>Visual novo</td><td data-l="Do jeito antigo">Esperar um remaster oficial, se existir</td><td data-l="Com o WLSS">Cell shading, anime, realista ou cinema em 1 clique</td></tr>
+  <tr><td>Vídeos</td><td data-l="Do jeito antigo">Horas de edição para aplicar um look</td><td data-l="Com o WLSS">Exporte o MP4 filtrado, com o áudio original, até 8K</td></tr>
+  <tr><td>Custo</td><td data-l="Do jeito antigo">Mods, plugins e mensalidades</td><td data-l="Com o WLSS">R$ 39,90 uma vez, sem mensalidade</td></tr></tbody></table>
+  <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Quero o WLSS</a></div>
+</div></section>
+
+<section id="como" class="mais" style="padding-top:20px"><div class="wrap">
+  <h2 class="rv">Como <span class="v">funciona</span></h2>
+  <div class="passos">
+    <div class="passo rv"><h3>Abra o jogo ou vídeo</h3><p>Janela, sem bordas, emulador ou player. O WLSS captura a imagem direto da GPU — nada é injetado.</p></div>
+    <div class="passo rv"><h3>Escolha um preset</h3><p>Mais de 300 presets prontos ou monte o seu com 750+ controles. A IA também analisa a tela e sugere.</p></div>
+    <div class="passo rv"><h3>Aperte F9 e jogue</h3><p>O filtro liga por cima da tela. F9 liga/desliga e F8 salva uma captura do resultado.</p></div>
   </div>
 </div></section>
 
@@ -184,7 +274,7 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
   <h2 class="rv">Melhore <span class="v">animes e desenhos antigos</span> com IA</h2>
   <p class="sub rv">Aquele anime da infância cheio de ruído, borrado e com cor apagada ganha traço nítido, cor viva e mais resolução. Em tempo real, direto no player.</p>
   <div class="anime-g">
-    <div class="rv"><figure class="ba" style="--pos:50%;--ar:1015/700">
+    <div class="rv"><figure class="ba" style="--pos:50%;--ar:1015/700;--arn:1.4500">
   <img class="ba-after" src="img/anime-velho-restaurado.webp" alt="Anime antigo restaurado e ampliado — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/animevelho-antes.webp" alt="Anime antigo restaurado e ampliado — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
@@ -213,53 +303,45 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
   <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o cell shading no meu jogo</a></div>
 </div></section>
 
-<section id="arte"><div class="wrap">
-  <h2 class="rv">A <span class="v">diferença</span> na tela</h2>
-  <p class="sub rv">O WLSS por cima do jogo, com o painel aberto: ajuste ao vivo e veja o resultado na hora.</p>
-  <figure class="rv arte"><img src="img/wlss-antes-depois-lara.webp" alt="WLSS: antes e depois em um jogo, com o painel de controle aberto" width="1376" height="768" loading="lazy"></figure>
-  <figure class="rv arte"><img src="img/wlss-arte-ferramenta.webp" alt="WLSS: a ferramenta para revolucionar seus gráficos (arte ilustrativa de divulgação)" width="1400" height="788" loading="lazy"><figcaption class="dica">Arte ilustrativa de divulgação.</figcaption></figure>
-  <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o WLSS</a></div>
-</div></section>
-
-<section id="presets"><div class="wrap">
+<section id="presets" class="mais"><div class="wrap">
   <h2 class="rv">Presets <span class="v">prontos para usar</span></h2>
   <p class="sub rv">Estilos salvos com um clique: do cel shading ao realista sombrio. Arraste a linha de cada foto para comparar com o original.</p>
-  <div class="grid-ba rv"><figure class="ba" style="--pos:50%;--ar:1100/618">
+  <div class="grid-ba rv"><figure class="ba" style="--pos:50%;--ar:1100/618;--arn:1.7799">
   <img class="ba-after" src="img/preset-zelda.webp" alt="Cel shading colorido — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/witcher-antes.webp" alt="Cel shading colorido — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Cel shading colorido</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
+</figure><figure class="ba" style="--pos:50%;--ar:1100/618;--arn:1.7799">
   <img class="ba-after" src="img/preset-zelda2.webp" alt="Quadrinho com retícula — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/witcher-antes.webp" alt="Quadrinho com retícula — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Quadrinho com retícula</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
+</figure><figure class="ba" style="--pos:50%;--ar:819/669;--arn:1.2242">
   <img class="ba-after" src="img/preset-sketch22.webp" alt="Retrato em desenho — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/retrato-antes.webp" alt="Retrato em desenho — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Retrato em desenho</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1024/521">
+</figure><figure class="ba" style="--pos:50%;--ar:1024/521;--arn:1.9655">
   <img class="ba-after" src="img/preset-gta10.webp" alt="Realista sombrio — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/gta-antes.webp" alt="Realista sombrio — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Realista sombrio</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1024/521">
+</figure><figure class="ba" style="--pos:50%;--ar:1024/521;--arn:1.9655">
   <img class="ba-after" src="img/preset-gta9.webp" alt="Cinema dessaturado — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/gta-antes.webp" alt="Cinema dessaturado — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Cinema dessaturado</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
+</figure><figure class="ba" style="--pos:50%;--ar:1100/618;--arn:1.7799">
   <img class="ba-after" src="img/preset-lud5.webp" alt="Cores vivas e contraste — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/carro-antes.webp" alt="Cores vivas e contraste — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
@@ -270,7 +352,7 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
   <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero esses presets</a></div>
 </div></section>
 
-<section id="laplaciano"><div class="wrap">
+<section id="laplaciano" class="mais"><div class="wrap">
   <span class="badge rv" style="display:table;margin:0 auto 16px">Destaque</span>
   <h2 class="rv">Laplaciano: <span class="v">transforme tudo em desenho</span></h2>
   <p class="sub rv">O Laplaciano é o motor de linhas do WLSS. Ele encontra as bordas da imagem e as redesenha como traço — contorno de anime, quadrinho, vetor ou ilustração — em tempo real, por cima de qualquer jogo ou vídeo.</p>
@@ -283,7 +365,7 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
       <div class="lap-i"><span class="n">5</span><div><h4>Laplaciano IA</h4><p>Reforça o contorno do personagem usando o recorte de IA, e ainda preenche sombras geométricas estilo HQ.</p></div></div>
       <div class="lap-eq">Jogo ou vídeo <b>+ 1 preset</b> = anime, HQ, vetor ou ilustração. Sem redesenhar nada.</div>
     </div>
-    <div class="rv"><div class="grid-ba" style="grid-template-columns:1fr"><figure class="ba" style="--pos:50%;--ar:819/669">
+    <div class="rv"><div class="grid-ba" style="grid-template-columns:1fr"><figure class="ba" style="--pos:50%;--ar:819/669;--arn:1.2242">
   <img class="ba-after" src="img/lap-retrato-anime.webp" alt="Retrato em anime — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/retrato-antes.webp" alt="Retrato em anime — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
@@ -292,28 +374,28 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
   <figcaption>Retrato em anime</figcaption>
 </figure></div></div>
   </div>
-  <div class="grid-ba rv" style="margin-top:22px"><figure class="ba" style="--pos:50%;--ar:819/669">
+  <div class="grid-ba rv" style="margin-top:22px"><figure class="ba" style="--pos:50%;--ar:819/669;--arn:1.2242">
   <img class="ba-after" src="img/lap-retrato-vetor.webp" alt="Vetor com contorno forte — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/retrato-antes.webp" alt="Vetor com contorno forte — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Vetor com contorno forte</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/618">
+</figure><figure class="ba" style="--pos:50%;--ar:1100/618;--arn:1.7799">
   <img class="ba-after" src="img/lap-carro-geometrico.webp" alt="Geométrico, cel grosso — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/carro-antes.webp" alt="Geométrico, cel grosso — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Geométrico, cel grosso</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:1100/849">
+</figure><figure class="ba" style="--pos:50%;--ar:1100/849;--arn:1.2956">
   <img class="ba-after" src="img/wolv-cromo.webp" alt="Cromo líquido — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/wolv-antes.webp" alt="Cromo líquido — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
   <input type="range" min="0" max="100" value="50" aria-label="Arraste para comparar: original e com WLSS">
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Cromo líquido</figcaption>
-</figure><figure class="ba" style="--pos:50%;--ar:819/669">
+</figure><figure class="ba" style="--pos:50%;--ar:819/669;--arn:1.2242">
   <img class="ba-after" src="img/retrato-cromo.webp" alt="Cromo líquido — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/retrato-antes.webp" alt="Cromo líquido — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
@@ -321,10 +403,33 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
   <span class="ba-handle" aria-hidden="true"></span>
   <figcaption>Cromo líquido</figcaption>
 </figure></div>
-  <div style="text-align:center;margin-top:36px"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>Quero o Laplaciano</a></div>
+  <div style="text-align:center;margin-top:36px"><a class="btn btn-v btn-gg" data-compra href="#oferta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Quero o Laplaciano</a></div>
 </div></section>
 
-<section><div class="wrap">
+<section id="arte" class="mais"><div class="wrap">
+  <h2 class="rv">A <span class="v">diferença</span> na tela</h2>
+  <p class="sub rv">O WLSS por cima do jogo, com o painel aberto: ajuste ao vivo e veja o resultado na hora.</p>
+  <figure class="rv arte"><img src="img/wlss-antes-depois-lara.webp" alt="WLSS: antes e depois em um jogo, com o painel de controle aberto" width="1376" height="768" loading="lazy"></figure>
+  <figure class="rv arte"><img src="img/wlss-arte-ferramenta.webp" alt="WLSS: a ferramenta para revolucionar seus gráficos (arte ilustrativa de divulgação)" width="1400" height="788" loading="lazy"><figcaption class="dica">Arte ilustrativa de divulgação.</figcaption></figure>
+  <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o WLSS</a></div>
+</div></section>
+
+<section id="recursos" class="mais"><div class="wrap">
+  <h2 class="rv">O que o WLSS <span class="v">faz por você</span></h2>
+  <p class="sub rv">Pare de ver o mesmo visual de sempre. Um painel só com tudo para transformar a imagem.</p>
+  <div class="grid4">
+    <div class="card rv"><div class="ic">⚡</div><h3>Tempo real na GPU</h3><p>Camada transparente por cima de qualquer janela. F9 liga e desliga, F8 salva a captura. O app mostra o custo de cada quadro.</p></div>
+    <div class="card rv"><div class="ic">🎌</div><h3>Restaurar anime antigo</h3><p>Limpa ruído e compressão, afia o traço e restaura as cores. Remove as linhas do desenho se você quiser redesenhar.</p></div>
+    <div class="card rv"><div class="ic">🌍</div><h3>Mundo: estação e clima</h3><p>Outono, inverno com neve, pôr do sol, noite com estrelas e lua, névoa, chuva e neve caindo.</p></div>
+    <div class="card rv"><div class="ic">🧍</div><h3>Personagem com IA</h3><p>Recorta o personagem para trocar o fundo, criar aura de fogo ou elétrica, desintegrar em poeira, virar mármore ou cromo.</p></div>
+    <div class="card rv"><div class="ic">🎨</div><h3>Arte e beleza</h3><p>Sketch de estúdio, cartoon 3D, pop art Warhol, rotoscópio, pele limpa (retoque) e melhorar imagem com dehaze.</p></div>
+    <div class="card rv"><div class="ic">🎬</div><h3>Exportar vídeo filtrado</h3><p>Aplique o filtro em um vídeo baixado e receba o MP4 pronto, com o áudio original — sem gravar a tela.</p></div>
+    <div class="card rv"><div class="ic">✒️</div><h3>Laplaciano: linhas e contornos</h3><p>O motor de linhas do WLSS: transforma a imagem em anime, HQ ou vetor, em até 3 camadas. <a href="#laplaciano" style="color:var(--v);font-weight:700">Ver como funciona →</a></p></div>
+    <div class="card rv"><div class="ic">🗂️</div><h3>Presets e importação</h3><p>Importe .json, .xmp do Lightroom e LUTs .cube. Seus presets salvos ficam protegidos nas atualizações.</p></div>
+  </div>
+</div></section>
+
+<section class="mais"><div class="wrap">
   <h2 class="rv">Feito para quem <span class="v">quer mais</span></h2>
   <div class="grid3">
     <div class="card rv"><div class="ic">🎮</div><h3>Quem joga</h3><p>Dê um visual novo ao seu jogo favorito: cinema, anime, cyberpunk ou realista, sem instalar mod nenhum.</p></div>
@@ -333,16 +438,7 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
   </div>
 </div></section>
 
-<section style="padding-top:20px"><div class="wrap">
-  <h2 class="rv">Como <span class="v">funciona</span></h2>
-  <div class="passos">
-    <div class="passo rv"><h3>Abra o jogo ou vídeo</h3><p>Janela, sem bordas, emulador ou player. O WLSS captura a imagem direto da GPU — nada é injetado.</p></div>
-    <div class="passo rv"><h3>Escolha um preset</h3><p>Mais de 300 presets prontos ou monte o seu com 750+ controles. A IA também analisa a tela e sugere.</p></div>
-    <div class="passo rv"><h3>Aperte F9 e jogue</h3><p>O filtro liga por cima da tela. F9 liga/desliga e F8 salva uma captura do resultado.</p></div>
-  </div>
-</div></section>
-
-<section id="video"><div class="wrap destaque">
+<section id="video" class="mais"><div class="wrap destaque">
   <div class="rv">
     <span class="badge">Novo</span>
     <h2 style="margin-top:16px">Baixou um vídeo? <span class="v">Entregue pronto.</span></h2>
@@ -350,7 +446,7 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
     <ul class="checks"><li>Mesma qualidade do tempo real, aplicada em cada quadro</li><li>Saída em 1080p, 1440p, 4K ou até 8K</li><li>Teste rápido de 10 segundos antes de exportar tudo</li></ul>
     <div class="cta-row" style="margin-top:26px"><a class="btn btn-v" data-compra href="#oferta">Quero exportar meus vídeos</a></div>
   </div>
-  <div class="rv"><figure class="ba" style="--pos:50%;--ar:1015/700">
+  <div class="rv"><figure class="ba" style="--pos:50%;--ar:1015/700;--arn:1.4500">
   <img class="ba-after" src="img/anime-velho-restaurado.webp" alt="Anime antigo restaurado e ampliado — com WLSS" decoding="async" loading="lazy">
   <img class="ba-before" src="img/animevelho-antes.webp" alt="Anime antigo restaurado e ampliado — original" decoding="async" loading="lazy">
   <span class="ba-tag l">ORIGINAL</span><span class="ba-tag r">COM WLSS</span>
@@ -365,7 +461,7 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
 <tr><td>Áudio</td><td>Regravado</td><td>O original, sem perda</td></tr>
 <tr><td>Trabalho</td><td>Assistir enquanto grava</td><td>Escolher e deixar processando</td></tr></tbody></table></div></section>
 
-<section id="demo"><div class="wrap">
+<section id="demo" class="mais"><div class="wrap">
   <h2 class="rv">Veja o WLSS <span class="v">funcionando de verdade</span></h2>
   <p class="sub rv">Sem edição e sem truque: o filtro rodando em tempo real. Aperte o play.</p>
   <div class="yt rv" data-id="mhZ7TkMINmI" data-start="1036" data-titulo="WLSS funcionando de verdade"><img src="https://i.ytimg.com/vi/mhZ7TkMINmI/hqdefault.jpg" alt="Vídeo de demonstração do WLSS" loading="lazy"><button class="play" type="button" aria-label="Assistir ao vídeo">▶</button></div>
@@ -375,6 +471,12 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
 <section id="oferta"><div class="wrap">
   <h2 class="rv">Leve o WLSS <span class="v">hoje</span></h2>
   <p class="sub rv">Um pagamento, para sempre. Baixe o teste grátis e decida com tudo liberado.</p>
+  <div class="risco rv">
+    <div class="r1"><b>1</b><span>Baixe o teste grátis<br><small>todos os efeitos, com marca d'água</small></span></div>
+    <div class="r1"><b>2</b><span>Veja no seu PC<br><small>no jogo ou vídeo que quiser</small></span></div>
+    <div class="r1"><b>3</b><span>Gostou? R$ 39,90<br><small>uma vez, sem mensalidade</small></span></div>
+    <div class="r1"><b>4</b><span>7 dias de garantia<br><small>não gostou, devolvemos</small></span></div>
+  </div>
   <div class="oferta rv">
     
     <div class="preco"><span data-preco>R$ 39,90</span></div>
@@ -382,13 +484,13 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
     <ul class="lista">
       <li>Todos os efeitos: Mundo, Extras, Arte e Beleza, Restaurar Anime</li><li>300+ presets prontos e 750+ controles</li><li>Exportar vídeo filtrado até 8K</li><li>Atualizações da versão maior inclusas</li><li>Seus presets salvos ficam protegidos nas atualizações</li><li>Chave entregue na hora, no PIX ou no cartão</li><li>Suporte direto pelo WhatsApp</li>
     </ul>
-    <a class="btn btn-v btn-gg" data-compra href="#" style="width:100%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>Comprar agora</a>
+    <a class="btn btn-v btn-gg" data-compra href="#" style="width:100%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Comprar agora</a>
     <a class="btn btn-o" href="https://lkztnhowitpvhayiwstw.supabase.co/functions/v1/wlss-licenca/comprar?ir=1&forma=cartao" style="width:100%;margin-top:10px">Pagar no cartão de crédito</a><p class="micro" style="margin-top:10px"><b>PIX</b>: chave na hora · <b>Cartão</b>: à vista, também na hora</p><p class="micro" style="margin-top:14px">ou <a data-download href="#" style="color:var(--v);text-decoration:underline">baixe o teste grátis</a> — todos os efeitos, com marca d'água</p>
   </div>
   <div class="garantia rv"><div class="sh">🛡️</div><p><b>Garantia de 7 dias.</b> Se o WLSS não for o que você esperava, devolvemos o seu dinheiro. Sem burocracia.</p></div>
 </div></section>
 
-<section style="padding-top:20px"><div class="wrap">
+<section class="criador-sec" style="padding-top:20px"><div class="wrap">
   <div class="criador rv"><div class="av">W</div><div><span class="badge">Quem criou</span><h3 style="margin-top:10px">Willian Ludgero</h3><p>Criador do Tattoo AI Master e do WLSS. Desenvolve ferramentas de IA e de imagem e dá suporte direto a quem compra.</p></div></div>
 </div></section>
 
@@ -400,8 +502,9 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
 <section class="final"><div class="wrap">
   <h2 class="rv">Pronto para ver seu jogo <span class="v">como nunca viu?</span></h2>
   <p class="sub rv">Baixe o teste grátis agora ou garanta a licença vitalícia por R$ 39,90.</p>
-  <div class="cta-row" style="justify-content:center;margin-top:32px"><a class="btn btn-v btn-gg" data-compra href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>Comprar o WLSS</a><a class="btn btn-o" data-download href="#">Baixar teste grátis</a></div>
+  <div class="cta-row" style="justify-content:center;margin-top:32px"><a class="btn btn-v btn-gg" data-compra href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>Comprar o WLSS</a><a class="btn btn-o" data-download href="#">Baixar teste grátis</a></div>
 </div></section>
+<div class="mais-wrap"><button class="btn btn-o btn-gg" id="maisBtn" type="button">Ver todos os recursos ▾</button></div>
 </main>
 
 <footer><div class="wrap">
@@ -429,6 +532,43 @@ if(CFG.gtag){var s=document.createElement('script');s.async=1;s.src='https://www
 document.querySelectorAll('.ba').forEach(function(f){var i=f.querySelector('input');i.addEventListener('input',function(){f.style.setProperty('--pos',i.value+'%')})});
 var tabs=document.querySelectorAll('.tab'),pn=document.querySelectorAll('.painel');
 tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.classList.remove('on')});pn.forEach(function(x){x.classList.remove('on')});t.classList.add('on');document.querySelector('[data-painel="'+t.dataset.tab+'"]').classList.add('on')})});
+
+(function(){
+var stages=document.querySelectorAll('.u-stage'),tabs=document.querySelectorAll('.u-tab'),sec=document.getElementById('universos');
+if(!stages.length||!sec)return;
+var manual=false,cur=0,vis=false,pre=false,calmo=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function setChip(st,chip){
+ st.querySelectorAll('.u-chip').forEach(function(c){c.classList.toggle('on',c===chip)});
+ var f=st.querySelector('.ba'),a=f.querySelector('.ba-after'),cap=f.querySelector('figcaption');
+ var url=chip.dataset.img,im=new Image();
+ function aplica(){if(!chip.classList.contains('on'))return;a.src=url;a.alt=chip.dataset.t+' — com WLSS';if(cap)cap.textContent=chip.dataset.t}
+ im.src=url;if(im.decode){im.decode().then(aplica).catch(aplica)}else{im.onload=aplica}
+ try{if(window.fbq&&manual)fbq('trackCustom','PresetTrocado',{preset:chip.dataset.t})}catch(e){}
+}
+function show(i){cur=i;tabs.forEach(function(x,k){x.classList.toggle('on',k===i)});stages.forEach(function(x,k){x.classList.toggle('on',k===i)})}
+stages.forEach(function(st){
+ st.querySelectorAll('.u-chip').forEach(function(c){c.addEventListener('click',function(){manual=true;setChip(st,c)})});
+ st.addEventListener('pointerdown',function(){manual=true});
+});
+tabs.forEach(function(t,i){t.addEventListener('click',function(){manual=true;show(i)})});
+function preload(){if(pre)return;pre=true;document.querySelectorAll('.u-chip').forEach(function(c){var im=new Image();im.src=c.dataset.img})}
+function varre(){
+ var f=stages[cur].querySelector('.ba'),inp=f.querySelector('input'),t0=null;
+ function passo(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/1100),e=1-Math.pow(1-k,3),v=Math.round(96-46*e);f.style.setProperty('--pos',v+'%');if(inp)inp.value=v;if(k<1)requestAnimationFrame(passo)}
+ requestAnimationFrame(passo);
+}
+var jaVarreu=false;
+if('IntersectionObserver' in window){
+ new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis){preload();if(!jaVarreu&&!calmo){jaVarreu=true;varre()}}},{threshold:.35}).observe(sec);
+}
+if(!calmo){setInterval(function(){
+ if(manual||!vis||document.hidden)return;
+ var st=stages[cur],cs=st.querySelectorAll('.u-chip'),k=0;
+ cs.forEach(function(c,j){if(c.classList.contains('on'))k=j});
+ setChip(st,cs[(k+1)%cs.length]);
+},3200)}
+})();
+var mb=document.getElementById('maisBtn');if(mb){mb.addEventListener('click',function(){document.body.classList.add('ver-mais');mb.parentNode.style.display='none';track('ViewContent')})}
 var barra=document.getElementById('barra'),hero=document.getElementById('topo');
 function sc(){barra.classList.toggle('on',window.scrollY>hero.offsetHeight*0.9)}
 window.addEventListener('scroll',sc,{passive:true});sc();

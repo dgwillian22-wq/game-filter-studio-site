@@ -124,7 +124,53 @@ footer{border-top:1px solid var(--b);padding:36px 0 96px;color:var(--dim);font-s
 .cmp .ytq{position:absolute;inset:0;z-index:1;background:#000}.cmp .ytq iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}.cmp .ytq[hidden]{display:none}.cmp .dep{z-index:2}.cmp .et,.cmp .alca{z-index:3}
 .arte{max-width:1000px;margin:30px auto 0;border-radius:18px;overflow:hidden;border:1px solid rgba(57,255,20,.3);box-shadow:0 0 70px rgba(57,255,20,.12)}.arte img{display:block;width:100%;height:auto}.arte figcaption{padding:8px 0 10px;margin:0}
 
+
+.u-tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.u-tab{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.16);border-radius:999px;padding:10px 22px;font:700 14px Inter,sans-serif;cursor:pointer}.u-tab:hover{border-color:var(--v)}.u-tab.on{background:var(--v);color:#000;border-color:var(--v)}
+.u-stage{display:none;max-width:980px;margin:22px auto 0}.u-stage.on{display:block}.u-stage .ba{width:min(100%,calc(68vh * var(--arn,1.78)));max-width:none;margin:0 auto}
+.u-chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.u-chip{background:rgba(57,255,20,.1);color:#fff;border:1px solid rgba(57,255,20,.4);border-radius:999px;padding:9px 16px;font:700 13px Inter,sans-serif;cursor:pointer;white-space:nowrap}.u-chip:hover{background:rgba(57,255,20,.22)}.u-chip.on{background:var(--v);color:#000;border-color:var(--v)}
+.risco{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:900px;margin:26px auto 0}
+.r1{display:flex;gap:10px;align-items:center;background:var(--s1);border:1px solid var(--b);border-radius:14px;padding:12px;font-size:13.5px;line-height:1.3;font-weight:600}
+.r1 b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--v);color:#000;display:flex;align-items:center;justify-content:center;font:900 14px Outfit,sans-serif}.r1 small{color:var(--dim);font-size:11.5px;font-weight:500}
+@media(max-width:760px){.risco{grid-template-columns:1fr 1fr}.u-chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:8px}.u-chip{flex:0 0 auto}}
+@media(max-width:760px){
+.vs.diff tbody tr:nth-child(n+4){display:none}
+#anime .anime-g>div:nth-child(2){display:none}
+body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+3){display:none}
+.qa summary{padding:14px 0}.qa p{padding-bottom:14px}
+section{padding:36px 0}
+}
 header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#video"],header nav a[href="#recursos"]{display:none}}
+.conceito{max-width:820px;margin:22px auto 0;text-align:center;font-size:clamp(17px,2vw,21px);line-height:1.5;color:rgba(255,255,255,.82)}.conceito b{color:var(--v)}
+.vs.diff td:first-child{font-weight:700;color:#fff;white-space:nowrap}
+.mais-wrap{display:none}
+@media(max-width:960px){
+.hero{padding:26px 0 0}.hero-g{gap:16px}
+.hero-g>div:first-child{display:contents}
+.hero-g .badge{order:1;justify-self:start}
+.hero-g h1{order:2;margin-top:2px}
+.hero-g p.lead{order:3;margin:0;font-size:16px;max-width:none}
+.hero-g .short-wrap{order:4}
+.hero-g .cta-row{order:5;margin-top:2px}
+.hero-g .micro{order:6;margin-top:0}
+}
+@media(max-width:760px){
+section{padding:44px 0}
+.stats,.ticker{display:none}
+.hero .cta-row{flex-direction:column;align-items:stretch}.hero .cta-row .btn{justify-content:center;text-align:center;width:100%}
+main{display:flex;flex-direction:column}
+main>section{order:8}
+main>.hero{order:0}#universos{order:1}#diferente{order:2}#como{order:3}#anime{order:4}#celshading{order:5}#presets{order:6}
+.mais-wrap{display:block;order:7;text-align:center;padding:4px 22px 30px}
+main>.mais{display:none;order:8}body.ver-mais main>.mais{display:block}
+#oferta{order:9}.criador-sec{order:10}#faq{order:11}.final{order:12}
+body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
+.vs.diff thead{display:none}.vs.diff,.vs.diff tbody,.vs.diff tr,.vs.diff td{display:block;width:100%}
+.vs.diff tr{padding:12px 4px;border-bottom:1px solid var(--b)}.vs.diff tr:last-child{border-bottom:0}
+.vs.diff td{border:0;padding:3px 12px}.vs.diff td:first-child{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--v)}
+.vs.diff td[data-l]::before{content:attr(data-l)": ";font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.55;font-weight:600}
+}
 
 .pg{padding:56px 0 80px}.pg .wrap{max-width:820px}
 .pg h1{font-family:Outfit,Inter,sans-serif;font-weight:900;font-size:clamp(30px,5vw,46px);line-height:1.08;margin-bottom:12px}
@@ -159,7 +205,7 @@ header nav a{white-space:nowrap}@media(max-width:1180px){header nav a[href="#vid
 
 <span class="badge">Legal</span>
 <h1>Termos de <span class="v">uso</span></h1>
-<p class="meta">Versão do WLSS 1.0.201 · Última atualização: 09/10/2026</p>
+<p class="meta">Versão do WLSS 1.0.201 · Última atualização: 10/10/2026</p>
 
 <h2>1. Quem somos</h2>
 <ul><li><b>Fornecedor:</b> Willian Luiz Ludgero Junior</li><li><b>CPF/CNPJ:</b> 126.195.617-60</li><li><b>Endereço:</b> Colatina - ES</li><li><b>WhatsApp:</b> <a href="https://wa.me/5527997962890" target="_blank" rel="noopener">+5527997962890</a></li><li><b>E-mail:</b> dgwillian22@gmail.com</li></ul>
