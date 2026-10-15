@@ -1,4 +1,5 @@
 import io
+import os
 import json
 import threading
 import urllib.request
@@ -164,3 +165,18 @@ def test_web_rejects_bad_input_and_foreign_origin(server):
     buf = io.BytesIO()
     noise(8, 8).save(buf, "PNG")
     assert post("/api/process?model=classic", buf.getvalue(), {"Origin": "https://evil.example"}) == 403
+
+
+@pytest.mark.skipif(not os.environ.get("TEXAI_TEST_AI"), reason="defina TEXAI_TEST_AI=1 (baixa o modelo e precisa de torch+spandrel)")
+def test_ai_backend_end_to_end():
+    from texai.backends import AIBackend
+
+    ai = AIBackend("general", tile=24)
+    img = noise(40, 40)
+    out = process_image(img, "color", Options(scale=4), ai)
+    assert out.size == (160, 160)
+    full = AIBackend("general", tile=4096).upscale(np.asarray(img), 4).astype(int)
+    tiled = ai.upscale(np.asarray(img), 4).astype(int)
+    assert np.abs(full - tiled).mean() < 2          # blocos nao criam emendas
+    assert ai.upscale(np.asarray(img), 8).shape == (320, 320, 3)
+    assert ai.upscale(np.asarray(img), 2).shape == (80, 80, 3)

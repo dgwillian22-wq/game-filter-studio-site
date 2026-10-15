@@ -94,7 +94,7 @@ class AIBackend:
         torch = self.torch
         h, w = rgb.shape[:2]
         passes = max(1, math.ceil(math.log(scale) / math.log(self.native))) if scale > 1 else 1
-        x = torch.from_numpy(np.ascontiguousarray(rgb)).permute(2, 0, 1)[None].float().div(255.0)
+        x = torch.from_numpy(np.array(rgb, copy=True)).permute(2, 0, 1)[None].float().div(255.0)
         x = x.to(self.device)
         if self.half:
             x = x.half()
