@@ -1,0 +1,5 @@
+pillow>=10.1
+numpy>=1.23
+# Motor de IA (opcional; sem isso so o modo "classic" funciona):
+torch>=2.0
+spandrel>=0.3

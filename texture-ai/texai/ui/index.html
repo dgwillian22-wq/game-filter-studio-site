@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TexAI - Texturas com IA</title>
+<style>
+  :root { --bg:#0f1115; --panel:#181b22; --line:#2a2f3a; --fg:#e8eaf0; --mut:#9aa3b2; --acc:#6aa9ff; }
+  @media (prefers-color-scheme: light) { :root { --bg:#f4f5f8; --panel:#fff; --line:#d9dce4; --fg:#16181d; --mut:#5b6472; --acc:#1f6feb; } }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.45 system-ui,sans-serif }
+  .wrap { max-width:1100px; margin:0 auto; padding:20px 16px 48px }
+  h1 { font-size:22px; margin:0 0 4px } p.sub { margin:0 0 18px; color:var(--mut) }
+  .grid { display:grid; grid-template-columns:300px 1fr; gap:16px }
+  @media (max-width:800px) { .grid { grid-template-columns:1fr } }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px }
+  label { display:block; margin:12px 0 4px; color:var(--mut); font-size:13px }
+  select,input[type=range] { width:100%; font:inherit }
+  select { padding:8px; background:var(--bg); color:var(--fg); border:1px solid var(--line); border-radius:8px }
+  .row { display:flex; gap:8px; align-items:center } .row label { margin:0; color:var(--fg); font-size:14px }
+  button { width:100%; margin-top:16px; padding:11px; border:0; border-radius:9px; background:var(--acc); color:#fff; font:600 15px inherit; cursor:pointer }
+  button:disabled { opacity:.5; cursor:wait } button.sec { background:transparent; color:var(--fg); border:1px solid var(--line); margin-top:8px }
+  .stage { position:relative; min-height:320px; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:10px;
+           background:repeating-conic-gradient(#8883 0 25%, transparent 0 50%) 0 0/20px 20px }
+  #drop { text-align:center; color:var(--mut); padding:60px 20px; cursor:pointer; width:100% }
+  #drop.over { outline:2px dashed var(--acc) }
+  .cmp { position:relative; max-width:100%; line-height:0; user-select:none; touch-action:none }
+  .cmp img { display:block; max-width:100%; max-height:70vh; image-rendering:pixelated }
+  .cmp .top { position:absolute; inset:0; width:100%; height:100%; clip-path:inset(0 50% 0 0) }
+  .cmp .bar { position:absolute; top:0; bottom:0; left:50%; width:3px; background:var(--acc); box-shadow:0 0 0 1px #0006; cursor:ew-resize }
+  .cmp .tag { position:absolute; top:8px; padding:2px 8px; border-radius:6px; background:#000a; color:#fff; font:12px/1.5 system-ui }
+  #msg { margin-top:10px; color:var(--mut); font-size:13px; min-height:20px } #msg.err { color:#ff6b6b }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>TexAI</h1>
+  <p class="sub">Arraste uma textura de jogo antigo e veja o antes/depois. Tudo roda no seu computador; nada e enviado para a internet.</p>
+  <div class="grid">
+    <div class="panel">
+      <label for="model">Modelo</label>
+      <select id="model"></select>
+      <small id="mdesc" style="color:var(--mut)"></small>
+      <label for="scale">Escala</label>
+      <select id="scale"><option>2</option><option selected>4</option><option>8</option></select>
+      <label for="kind">Tipo de textura</label>
+      <select id="kind">
+        <option value="color">Cor (difusa / albedo)</option>
+        <option value="normal">Mapa de normais</option>
+        <option value="data">Mascara / spec / altura</option>
+      </select>
+      <label for="strength">Intensidade da IA: <b id="sv">100</b>%</label>
+      <input id="strength" type="range" min="0" max="100" value="100">
+      <label for="sharpen">Nitidez extra: <b id="shv">0</b></label>
+      <input id="sharpen" type="range" min="0" max="20" value="0">
+      <div class="row" style="margin-top:12px"><input id="tileable" type="checkbox"><label for="tileable">Textura repetivel (sem emendas)</label></div>
+      <button id="go" disabled>Melhorar textura</button>
+      <button id="dl" class="sec" disabled>Baixar PNG</button>
+      <div id="msg"></div>
+    </div>
+    <div class="panel">
+      <div class="stage" id="stage">
+        <div id="drop">Solte a imagem aqui ou clique para escolher<br><small>PNG, JPG, BMP, TGA, DDS, PCX, WEBP...</small></div>
+      </div>
+      <input id="file" type="file" accept="image/*,.tga,.dds,.pcx" hidden>
+    </div>
+  </div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+let file = null, resultUrl = null, srcUrl = null;
+
+fetch('/api/info').then(r => r.json()).then(info => {
+  const sel = $('model');
+  info.models.forEach(m => { const o = new Option(m.key, m.key); o.title = m.desc; sel.add(o); });
+  sel.value = info.models.find(m => m.key === 'general') ? 'general' : 'classic';
+  const upd = () => $('mdesc').textContent = (info.models.find(m => m.key === sel.value) || {}).desc || '';
+  sel.onchange = upd; upd();
+});
+$('strength').oninput = e => $('sv').textContent = e.target.value;
+$('sharpen').oninput = e => $('shv').textContent = (e.target.value / 10).toFixed(1);
+
+const drop = $('drop'), fileIn = $('file');
+drop.onclick = () => fileIn.click();
+fileIn.onchange = () => fileIn.files[0] && pick(fileIn.files[0]);
+['dragover','dragenter'].forEach(ev => $('stage').addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+['dragleave','drop'].forEach(ev => $('stage').addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+$('stage').addEventListener('drop', e => e.dataTransfer.files[0] && pick(e.dataTransfer.files[0]));
+
+function pick(f) {
+  file = f; resultUrl = null; $('dl').disabled = true;
+  if (srcUrl) URL.revokeObjectURL(srcUrl);
+  srcUrl = URL.createObjectURL(f);
+  const n = f.name.toLowerCase();
+  if (/_(n|nrm|nm|normal)\.[a-z]+$/.test(n)) $('kind').value = 'normal';
+  $('go').disabled = false; msg('Arquivo: ' + f.name);
+  const stage = $('stage'); stage.innerHTML = '';
+  const img = new Image(); img.style.imageRendering = 'pixelated'; img.style.maxWidth = '100%';
+  img.onerror = () => { stage.appendChild(drop); msg('O navegador nao mostra esse formato, mas o app ainda consegue processar.', false); };
+  img.src = srcUrl; stage.appendChild(img);
+}
+function msg(t, err) { $('msg').textContent = t; $('msg').className = err ? 'err' : ''; }
+
+$('go').onclick = async () => {
+  if (!file) return;
+  $('go').disabled = true; msg('Processando...');
+  const q = new URLSearchParams({
+    model: $('model').value, scale: $('scale').value, kind: $('kind').value,
+    strength: $('strength').value / 100, sharpen: $('sharpen').value / 10,
+    tileable: $('tileable').checked ? '1' : '0',
+  });
+  const t0 = performance.now();
+  try {
+    const r = await fetch('/api/process?' + q, { method: 'POST', body: file });
+    if (!r.ok) throw new Error((await r.json()).error || r.statusText);
+    const blob = await r.blob();
+    if (resultUrl) URL.revokeObjectURL(resultUrl);
+    resultUrl = URL.createObjectURL(blob);
+    show(); $('dl').disabled = false;
+    msg('Pronto em ' + ((performance.now() - t0) / 1000).toFixed(1) + 's');
+  } catch (e) { msg(e.message, true); }
+  $('go').disabled = false;
+};
+
+function show() {
+  const stage = $('stage'); stage.innerHTML = '';
+  const box = document.createElement('div'); box.className = 'cmp';
+  const after = new Image(); after.src = resultUrl;
+  const before = new Image(); before.src = srcUrl; before.className = 'top';
+  after.onload = () => { box.style.width = Math.min(after.naturalWidth, stage.clientWidth) + 'px'; };
+  const bar = document.createElement('div'); bar.className = 'bar';
+  const a = document.createElement('span'); a.className = 'tag'; a.style.left = '8px'; a.textContent = 'Antes';
+  const b = document.createElement('span'); b.className = 'tag'; b.style.right = '8px'; b.textContent = 'Depois';
+  box.append(after, before, bar, a, b); stage.appendChild(box);
+  const move = x => {
+    const r = box.getBoundingClientRect(), p = Math.max(0, Math.min(1, (x - r.left) / r.width)) * 100;
+    before.style.clipPath = `inset(0 ${100 - p}% 0 0)`; bar.style.left = p + '%';
+  };
+  let drag = false;
+  box.addEventListener('pointerdown', e => { drag = true; box.setPointerCapture(e.pointerId); move(e.clientX); });
+  box.addEventListener('pointermove', e => drag && move(e.clientX));
+  box.addEventListener('pointerup', () => drag = false);
+}
+
+$('dl').onclick = () => {
+  if (!resultUrl) return;
+  const a = document.createElement('a');
+  a.href = resultUrl; a.download = file.name.replace(/\.[^.]+$/, '') + '_ai.png'; a.click();
+};
+</script>
+</body>
+</html>

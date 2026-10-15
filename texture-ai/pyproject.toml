@@ -1,0 +1,22 @@
+[project]
+name = "texai"
+version = "0.1.0"
+description = "Remasterize texturas de jogos antigos com IA (Real-ESRGAN e outros modelos)."
+requires-python = ">=3.9"
+dependencies = ["pillow>=10.1", "numpy>=1.23"]
+
+[project.optional-dependencies]
+ai = ["torch>=2.0", "spandrel>=0.3"]
+dev = ["pytest"]
+
+[project.scripts]
+texai = "texai.cli:main"
+
+[tool.setuptools]
+packages = ["texai"]
+
+[tool.setuptools.package-data]
+texai = ["ui/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
