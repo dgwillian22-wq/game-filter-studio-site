@@ -1,0 +1,8 @@
+numpy>=1.26
+opencv-python>=4.9
+pygame>=2.5
+moderngl>=5.10
+sounddevice>=0.4.6
+# Windows (GPU de qualquer fabricante via DirectML). Em Linux/Mac use "onnxruntime".
+onnxruntime-directml>=1.18; sys_platform == "win32"
+onnxruntime>=1.18; sys_platform != "win32"
