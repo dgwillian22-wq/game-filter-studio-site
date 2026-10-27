@@ -203,6 +203,10 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
 .vs.diff td{border:0;padding:3px 12px}.vs.diff td:first-child{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--v)}
 .vs.diff td[data-l]::before{content:attr(data-l)": ";font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.55;font-weight:600}
 }
+
+.p3d{margin-top:54px;padding-top:6px}.p3d>.badge{display:table;margin:0 auto 12px}.p3d-t{text-align:center;font-size:clamp(22px,3.4vw,34px);font-weight:900;letter-spacing:-.02em;margin:0}.p3d .sub{text-align:center}
+.p3d-vid{margin:26px auto 0;max-width:1200px;border-radius:var(--rl);overflow:hidden;border:1px solid rgba(57,255,20,.28);background:#000;box-shadow:0 0 60px rgba(57,255,20,.08)}.p3d-vid video{display:block;width:100%;height:auto;aspect-ratio:32/9}
+@media(max-width:700px){.p3d-vid video{aspect-ratio:1080/1216}}
 </style>
 </head>
 <body class="home">
@@ -295,6 +299,18 @@ body:not(.ver-mais) #presets .grid-ba>*:nth-child(n+5){display:none}
     <div class="card rv"><div class="ic">🎬</div><h3>Saindo da tela</h3><p>A IA separa frente, meio e fundo. O personagem salta da moldura com sombra e luz de contorno, e o fundo acompanha em outra velocidade.</p></div>
     <div class="card rv"><div class="ic">🌐</div><h3>3D por IA</h3><p>Uma rede de IA desloca a imagem inteira pela profundidade, sem buracos e sem recorte. Também gera o par estéreo (anaglifo, TV e monitor 3D).</p></div>
     <div class="card rv"><div class="ic">🫧</div><h3>Malha inflada</h3><p>Só as superfícies que estão à frente ganham volume, e o fundo fica intacto. Tamanho, rigidez e intensidade ajustáveis.</p></div>
+  </div>
+  <div class="p3d rv">
+    <span class="badge">Novo na versão 1.0.256</span>
+    <h3 class="p3d-t">Pisca 3D por camadas: <span class="v">o normal ao lado do 3D</span></h3>
+    <p class="sub" style="margin-top:8px">Mesmo gameplay, mesmo instante. À esquerda o vídeo normal; à direita o Pisca 3D por camadas: o que está perto se desloca mais que o fundo, num movimento contínuo e sem travadas.</p>
+    <div class="p3d-vid"><video id="p3dLado" src="media/pisca3d_lado.mp4" poster="media/pisca3d_poster.jpg" data-mob="media/pisca3d_empilhado.mp4" data-mobposter="media/pisca3d_empilhado_poster.jpg" muted playsinline loop controls preload="none" aria-label="Vídeo lado a lado: normal e Pisca 3D"></video></div>
+    <p class="dica">Gameplay de Marvel's Wolverine (canal GamerANH, YouTube), usado só para demonstrar o filtro. Pisca 3D com cuia por camada, vaivém e deriva. O Pisca 3D é exclusivo da versão ativada (com chave).</p>
+    <div class="grid3">
+      <div class="card"><div class="ic">🌀</div><h3>Movimentos contínuos</h3><p>Cuia por camada (cada camada gira com a sua fase, do fundo para a frente), pulsação, deriva e órbita contínua. Eles se somam, e a fase do movimento não reinicia: sem travadinhas.</p></div>
+      <div class="card"><div class="ic">🧩</div><h3>Camadas sem cortes</h3><p>Escolha entre o tipo suave (profundidade em faixas com passagem macia) e as placas rígidas (cada camada só desloca), com fundo contínuo e esmaecimento de borda.</p></div>
+      <div class="card"><div class="ic">🌑</div><h3>Mais profundidade</h3><p>Sombra de oclusão com contato, ampla e colorida, proteção de texto e legenda, e partes do personagem por cor (cabelo, pele e roupa, em modo experimental).</p></div>
+    </div>
   </div>
   <p class="dica rv" style="text-align:center;margin-top:22px">Compare com e sem o efeito a qualquer momento. O 3D sem óculos é exclusivo da versão ativada (com chave).</p>
   <div class="cta-row" style="justify-content:center;margin-top:30px"><a class="btn btn-v btn-gg" data-compra href="#oferta">Quero o 3D no meu WLSS</a></div>
@@ -647,6 +663,7 @@ va.addEventListener('ended',function(){vd.currentTime=0;va.currentTime=0;toca()}
 if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(en){
   if(en.isIntersecting){if(!manual&&!tocando())toca()}else if(tocando()){pausa()}})},{threshold:.35}).observe(ba)}
 })();
+(function(){var v=document.getElementById('p3dLado');if(!v)return;if(window.innerWidth<700&&v.dataset.mob){v.src=v.dataset.mob;v.poster=v.dataset.mobposter}if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){})}else{v.pause()}})},{threshold:.35}).observe(v)}})();
 </script>
 </body>
 </html>
